@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nail-disease/static/css/main.a2c5b987.css",
-    "main.js": "/nail-disease/static/js/main.8a5543e4.js",
+    "main.js": "/nail-disease/static/js/main.91a4d3f4.js",
     "static/js/787.4854053c.chunk.js": "/nail-disease/static/js/787.4854053c.chunk.js",
     "static/media/img-hero2.jpg": "/nail-disease/static/media/img-hero2.7a396087717d6aac698a.jpg",
     "static/media/intro.png": "/nail-disease/static/media/intro.49298f2e5cd1a809559b.png",
@@ -23,11 +23,11 @@
     "static/media/naillogo.png": "/nail-disease/static/media/naillogo.8c5d01a62e59d9a18727.png",
     "index.html": "/nail-disease/index.html",
     "main.a2c5b987.css.map": "/nail-disease/static/css/main.a2c5b987.css.map",
-    "main.8a5543e4.js.map": "/nail-disease/static/js/main.8a5543e4.js.map",
+    "main.91a4d3f4.js.map": "/nail-disease/static/js/main.91a4d3f4.js.map",
     "787.4854053c.chunk.js.map": "/nail-disease/static/js/787.4854053c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2c5b987.css",
-    "static/js/main.8a5543e4.js"
+    "static/js/main.91a4d3f4.js"
   ]
 }
