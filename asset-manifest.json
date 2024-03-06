@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/nailbook/static/css/main.bfb81d45.css",
+    "main.js": "/nailbook/static/js/main.1fcac1e7.js",
+    "static/js/787.4854053c.chunk.js": "/nailbook/static/js/787.4854053c.chunk.js",
+    "static/media/img-hero2.jpg": "/nailbook/static/media/img-hero2.7a396087717d6aac698a.jpg",
+    "static/media/intro.png": "/nailbook/static/media/intro.49298f2e5cd1a809559b.png",
+    "static/media/img5.jpg": "/nailbook/static/media/img5.005ef6648860b053814d.jpg",
+    "static/media/img-hero1.jpg": "/nailbook/static/media/img-hero1.25bc79d8d10f678124f4.jpg",
+    "static/media/img3.jpg": "/nailbook/static/media/img3.69dad03ac4f397774b6d.jpg",
+    "static/media/img6.jpg": "/nailbook/static/media/img6.9e08883b1c713f3beae0.jpg",
+    "static/media/bg-testimonial.jpg": "/nailbook/static/media/bg-testimonial.b26cbabc972e95786cbf.jpg",
+    "static/media/img-hero3.jpg": "/nailbook/static/media/img-hero3.fc13d76750b1bf1ff1e5.jpg",
+    "static/media/img8.jpg": "/nailbook/static/media/img8.1066af4480d9f53431f2.jpg",
+    "static/media/img7.jpg": "/nailbook/static/media/img7.55be95b71959267f1c62.jpg",
+    "static/media/img9.jpg": "/nailbook/static/media/img9.62fae622b50012e2a9e6.jpg",
+    "static/media/img2.jpg": "/nailbook/static/media/img2.40a9d29b9f470a11669e.jpg",
+    "static/media/img4.jpg": "/nailbook/static/media/img4.ba37c27ab5da9b7d7e66.jpg",
+    "static/media/blog3.jpg": "/nailbook/static/media/blog3.bcca9fb438e228c66612.jpg",
+    "static/media/blog1.jpg": "/nailbook/static/media/blog1.41fc52f527bd1b05cdcd.jpg",
+    "static/media/blog2.jpg": "/nailbook/static/media/blog2.b31a167d23173c955d09.jpg",
+    "static/media/score.png": "/nailbook/static/media/score.a35ec9561d3c60ffd599.png",
+    "static/media/naillogo.png": "/nailbook/static/media/naillogo.8c5d01a62e59d9a18727.png",
+    "index.html": "/nailbook/index.html",
+    "main.bfb81d45.css.map": "/nailbook/static/css/main.bfb81d45.css.map",
+    "main.1fcac1e7.js.map": "/nailbook/static/js/main.1fcac1e7.js.map",
+    "787.4854053c.chunk.js.map": "/nailbook/static/js/787.4854053c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bfb81d45.css",
+    "static/js/main.1fcac1e7.js"
+  ]
+}
