@@ -8,15 +8,15 @@ function AppHeader() {
     <Navbar bg="light" expand="lg">
       <Container>
         <img className="nail-logo" src={naillogo} alt="..." />
-        <Navbar.Brand href="/nailbook">Nail-Disease</Navbar.Brand>
+        <Navbar.Brand href="/nail-disease">Nail-Disease</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/nailbook">首頁</Nav.Link>
-            <Nav.Link href="/nailbook/purpose">目的</Nav.Link>
-            <Nav.Link href="/nailbook/disease">辨識的疾病</Nav.Link>
+            <Nav.Link href="/nail-disease">首頁</Nav.Link>
+            <Nav.Link href="/nail-disease/purpose">目的</Nav.Link>
+            <Nav.Link href="/nail-disease/disease">辨識的疾病</Nav.Link>
             <Nav.Link href="#works">運用技術</Nav.Link>
-            <Nav.Link href="/nailbook/video">觀看影片與測驗</Nav.Link>
+            <Nav.Link href="/nail-disease/video">觀看影片與測驗</Nav.Link>
             {/* <Nav.Link href="#testimonials">Testimonials</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
             <Nav.Link href="#blog">Blog</Nav.Link>

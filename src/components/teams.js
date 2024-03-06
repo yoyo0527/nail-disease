@@ -412,7 +412,7 @@ function AppTeams() {
                             text: '得分:' + (afterscore+1) + '/10',
                             imageUrl: scorepic,
                         })
-                        navigate('/nailbook');
+                        navigate('/nail-disease');
                     });
                 } else {
                     Swal.fire('Mistake', '正確答案為(B)生物大腦結構', 'error').then(()=>{
@@ -420,7 +420,7 @@ function AppTeams() {
                             text: '得分:' + afterscore + '/10',
                             imageUrl: scorepic,
                         })
-                        navigate('/nailbook');
+                        navigate('/nail-disease');
                     });
                 } 
                 break;
@@ -521,7 +521,7 @@ function AppTeams() {
                             text: '得分:' + (beforescore+1) + '/10',
                             imageUrl: scorepic,
                         })
-                        navigate('/nailbook');
+                        navigate('/nail-disease');
                     });
                 } else {
                     Swal.fire('Mistake', '正確答案為(C)神經網絡的多層結構', 'error').then(()=>{
@@ -529,7 +529,7 @@ function AppTeams() {
                             text: '得分:' + beforescore + '/10',
                             imageUrl: scorepic,
                         })
-                        navigate('/nailbook');
+                        navigate('/nail-disease');
                     });
                 } 
                 break;
