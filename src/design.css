@@ -1,0 +1,27 @@
+p {
+    font-size: 130%;
+}
+
+.nav-link {
+    font-size: 140%;
+}
+
+.nail-logo{
+    width: 7%;    
+}
+
+h2 {
+    font-size: 300%;
+}
+
+h3 {
+    font-size: 200%;
+}
+
+.video-set {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 500px;
+  }
