@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-import '../design.css'
+import './App.css';
+import './design.css'
 import AppHeader from './components/header';
 import AppHero from './components/hero';
 import AppWorks from './components/works';

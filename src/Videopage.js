@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-import '../design.css'
-import AppHeader from './header';
-import AppHero from './hero';
-import AppTeams from './teams';
-import AppFooter from './footer';
+import './App.css';
+import './design.css'
+import AppHeader from './components/header';
+import AppHero from './components/hero';
+import AppTeams from './components/teams';
+import AppFooter from './components/footer';
 
 export function Videopage() {
     return (

@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Route, HashRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import { Disease, Home, Purpose } from './components/pagemange';
+import { Home, Purpose } from './components/pagemange';
 import { Videopage } from './Videopage';
 import { Disease } from './Diseasepage';
 
