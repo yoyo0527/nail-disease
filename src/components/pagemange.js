@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import '../design.css'
 import AppHeader from './header';
 import AppHero from './hero';
 import AppAbout from './about';
@@ -64,7 +63,7 @@ export function Disease() {
         <AppHero />
         <AppWorks />
         {/* <AppTeams /> */}
-        <AppTestimonials />
+        {/* <AppTestimonials /> */}
         <AppBlog />
       </main>
       <footer id="footer">

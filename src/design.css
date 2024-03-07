@@ -24,4 +24,29 @@ h3 {
     margin-right: auto;
     width: 70%;
     height: 500px;
-  }
+}
+
+.custom-carousel {
+    width: 70%; 
+    margin: 0 auto; 
+}
+
+.slide-image {
+    height: 80vh;
+    width: 100%;
+}
+
+.detect-image {
+    width: 100%;
+    height: 25vh;
+    border-radius: 4%;
+}
+
+.custom-ul {
+    list-style-type: disc; 
+    margin-left: 20px;
+}
+  
+hr {
+    border-width: 2px;
+}

@@ -7,86 +7,42 @@ import Pagination from 'react-bootstrap/Pagination';
 const worksData = [
   {
     id: 1,
-    link: 'https://www.google.com',
-    image: require('../assets/images/img2.jpg'),
-    title: 'Lonely Path',
-    subtitle: 'Web Design'
+    link: '#graynail',
+    image: require('../assets/images/graynail.jpg'),
+    title: '灰指甲',
   },
   {
     id: 2,
     link: 'https://www.google.com',
-    image: require('../assets/images/img3.jpg'),
-    title: 'Photographer Girl',
-    subtitle: 'Branding'
+    image: require('../assets/images/clubbing.jpg'),
+    title: '杵狀指',
   },
   {
     id: 3,
     link: 'https://www.google.com',
-    image: require('../assets/images/img4.jpg'),
-    title: 'The Difference',
-    subtitle: 'Web Design'
+    image: require('../assets/images/beaus.jpg'),
+    title: '博氏線',
   },
   {
     id: 4,
     link: 'https://www.google.com',
-    image: require('../assets/images/img5.jpg'),
-    title: 'Nature Patterns',
-    subtitle: 'Branding'
+    image: require('../assets/images/blackline.jpg'),
+    title: '縱向黑甲症',
   },
   {
     id: 5,
     link: 'https://www.google.com',
-    image: require('../assets/images/img6.jpg'),
-    title: 'The Difference',
-    subtitle: 'Photography'
+    image: require('../assets/images/whitedot8.png'),
+    title: '白甲',
   },
-  {
-    id: 6,
-    link: 'https://www.google.com',
-    image: require('../assets/images/img7.jpg'),
-    title: 'Winter Sonata',
-    subtitle: 'Web Design'
-  },
-  {
-    id: 7,
-    link: 'https://www.google.com',
-    image: require('../assets/images/img8.jpg'),
-    title: 'Lonely Path',
-    subtitle: 'Branding'
-  },
-  {
-    id: 8,
-    link: 'https://www.google.com',
-    image: require('../assets/images/img9.jpg'),
-    title: 'Appreciation',
-    subtitle: 'Photography'
-  },
-  {
-    id: 9,
-    link: 'https://www.google.com',
-    image: require('../assets/images/img2.jpg'),
-    title: 'Happy Days',
-    subtitle: 'Web Design'
-  }
 ]
-
-let active = 2;
-let items = [];
-for (let number = 1; number <= 5; number++) {
-  items.push(
-    <Pagination.Item key={number} active={number === active}>
-      {number}
-    </Pagination.Item>,
-  );
-}
 
 function AppWorks() {
   return (
     <section id="works" className="block works-block">
       <Container fluid>
         <div className="title-holder">
-          <h2>Our works</h2>
-          <div className="subtitle">our awesome works</div>
+          <h2>辨識的疾病</h2>
         </div>
         <Row className='portfoliolist'>
           {
@@ -95,10 +51,9 @@ function AppWorks() {
                 <Col sm={4} key={works.id}>
                   <div className='portfolio-wrapper'>
                     <a href={works.link}>
-                      <Image src={works.image} />
+                      <Image src={works.image}  className='detect-image'/>
                       <div className='label text-center'>
-                        <h3>{works.title}</h3>
-                        <p>{works.subtitle}</p>
+                        <h3 style={{fontSize:'150%'}}>{works.title}</h3>
                       </div>
                     </a>
                   </div>
@@ -107,7 +62,6 @@ function AppWorks() {
             })
           }
         </Row>
-        <Pagination>{items}</Pagination>
       </Container>  
     </section>
   );

@@ -3,45 +3,48 @@ import Carousel from 'react-bootstrap/Carousel';
 var heroData = [
   {
     id: 1,
-    image: require('../assets/images/img-hero1.jpg'),
-    title: 'The perfect design for your website',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab suscipit dicta nulla. Consequuntur obcaecati officiis, labore doloribus non tempore impedit consequatur ab dolor. Explicabo quam repellendus vero omnis, nisi odio!',
-    link: 'https://www.google.com'
+    image: require('../assets/images/graynail3.jpg'),
+    title: '灰指甲',
   },
   {
     id: 2,
-    image: require('../assets/images/img-hero2.jpg'),
-    title: 'Start Your Future Financial Plan',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab suscipit dicta nulla. Consequuntur obcaecati officiis, labore doloribus non tempore impedit consequatur ab dolor. Explicabo quam repellendus vero omnis, nisi odio!',
-    link: 'https://www.facebook.com'
+    image: require('../assets/images/clubbing4.png'),
+    title: '杵狀指',
   },
   {
     id: 3,
-    image: require('../assets/images/img-hero3.jpg'),
-    title: 'Enjoy the Difference',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab suscipit dicta nulla. Consequuntur obcaecati officiis, labore doloribus non tempore impedit consequatur ab dolor. Explicabo quam repellendus vero omnis, nisi odio!',
-    link: 'https://www.twitter.com'
-  }
+    image: require('../assets/images/beaus.jpg'),
+    title: '博氏線',
+  },
+  {
+    id: 4,
+    image: require('../assets/images/blackline.jpg'),
+    title: '縱向黑甲症',
+  },
+  {
+    id: 5,
+    image: require('../assets/images/whitedot8.png'),
+    title: '白甲',
+  },
+
 ]
 
 function AppHero() {
   return (
-    <section id="home" className="hero-block">
-       <Carousel>
+    <section id="home" >
+       <Carousel className="custom-carousel">
           {
             heroData.map(hero => {
               return (
                 <Carousel.Item key={hero.id}>
                   <img
-                    className="d-block w-100"
+                    className="slide-image d-block"
                     src={hero.image}
                     alt={"slide " + hero.id}
                   />
-                  <Carousel.Caption>
-                    <h2>{hero.title}</h2>
-                    <p>{hero.description}</p>
-                    <a className="btn btn-primary" href={hero.link}>Learn More <i className="fas fa-chevron-right"></i></a>
-                  </Carousel.Caption>             
+                  {/* <Carousel.Caption>
+                    <h2 style={{color:'white'}}><b>{hero.title}</b></h2>
+                  </Carousel.Caption>              */}
                 </Carousel.Item>
               );
             })
