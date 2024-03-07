@@ -27,13 +27,13 @@ h3 {
 }
 
 .custom-carousel {
-    width: 70%; 
+    width: 60%; 
     margin: 0 auto; 
     background-color: rgb(100, 100, 100);
 }
 
 .slide-image {
-    height: 50vh;
+    height: 60vh;
     display: block;
     margin: 0 auto;
 }
