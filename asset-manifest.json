@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/naildisease/static/css/main.ea962506.css",
-    "main.js": "/naildisease/static/js/main.d6c63242.js",
+    "main.css": "/naildisease/static/css/main.37c1f0cc.css",
+    "main.js": "/naildisease/static/js/main.bfb781b2.js",
     "static/js/787.4854053c.chunk.js": "/naildisease/static/js/787.4854053c.chunk.js",
     "static/media/intro.png": "/naildisease/static/media/intro.49298f2e5cd1a809559b.png",
     "static/media/clubbing4.png": "/naildisease/static/media/clubbing4.144fc0f3271d142b89bb.png",
@@ -17,12 +17,12 @@
     "static/media/graynail.jpg": "/naildisease/static/media/graynail.e1dc1e566132000ae2b1.jpg",
     "static/media/clubbing.jpg": "/naildisease/static/media/clubbing.dcb091ef2e3e11587cfc.jpg",
     "index.html": "/naildisease/index.html",
-    "main.ea962506.css.map": "/naildisease/static/css/main.ea962506.css.map",
-    "main.d6c63242.js.map": "/naildisease/static/js/main.d6c63242.js.map",
+    "main.37c1f0cc.css.map": "/naildisease/static/css/main.37c1f0cc.css.map",
+    "main.bfb781b2.js.map": "/naildisease/static/js/main.bfb781b2.js.map",
     "787.4854053c.chunk.js.map": "/naildisease/static/js/787.4854053c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea962506.css",
-    "static/js/main.d6c63242.js"
+    "static/css/main.37c1f0cc.css",
+    "static/js/main.bfb781b2.js"
   ]
 }
