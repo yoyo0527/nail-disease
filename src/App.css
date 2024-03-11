@@ -16,7 +16,7 @@ html {
 
 body {
   color: #333;
-  background: rgb(236, 236, 236);
+  background: rgb(221,221,221);
   font: 16px/1.6 "Muli", sans-serif;
   min-width: 320px;
   -webkit-font-smoothing: antialiased;
@@ -451,7 +451,7 @@ textarea {
   text-transform: uppercase;
   font-weight: 600;
   height: auto;
-  padding: 0;
+  padding: 1;
   font-size: 22px;
   line-height: 1.6;
 }
@@ -461,16 +461,17 @@ textarea {
 }
 
 #header .navbar-collapse .navbar-nav {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
 }
+
 
 #header .navbar-collapse a:last-child {
   padding-right: 0;
 }
 
 #header .navbar-collapse a {
-  color: #4d4d4d;
+  color: #3f829f;
   position: relative;
 }
 
@@ -661,6 +662,21 @@ textarea {
   height: auto;
   width: 100%;
   border-radius: 4%;
+}
+
+@media (max-width: 768px) {
+  .works-block .portfoliolist .portfolio-wrapper {
+    overflow: hidden;
+    position: relative !important;
+    background: #666;
+    cursor: pointer;
+    height: auto;
+    width: 80%;
+    border-radius: 4%;
+    display: block;
+    margin: 0 auto;
+
+  }
 }
 
 .works-block .portfoliolist .label {

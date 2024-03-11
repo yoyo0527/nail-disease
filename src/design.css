@@ -37,28 +37,28 @@ h3 {
 }
 
 .custom-carousel {
-    width: 60%; 
+    width: 65%; 
     margin: 0 auto; 
-    background-color: rgb(100, 100, 100);
+    /* background-color: rgb(100, 100, 100); */
 }
+
 
 @media (max-width: 768px) {
     .custom-carousel {
         width: 100%; 
         margin: 0 auto; 
-        background-color: rgb(100, 100, 100);
+        /* background-color: rgb(100, 100, 100); */
     }
 }
 
 .slide-image {
-    height: 70vh;
     display: block;
     margin: 0 auto;
 }
 
 @media (max-width: 768px) {
     .slide-image {
-      height: 40vh;
+      height: 35vh;
     }
 }
 

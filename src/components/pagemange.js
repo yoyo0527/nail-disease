@@ -62,7 +62,6 @@ export function Disease() {
       <main>
         <AppHero />
         <AppWorks />
-        {/* <AppTeams /> */}
         {/* <AppTestimonials /> */}
         <AppBlog />
       </main>
