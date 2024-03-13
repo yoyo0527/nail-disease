@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/naildisease/static/css/main.fb5eb1f7.css",
-    "main.js": "/naildisease/static/js/main.6e2985bc.js",
+    "main.css": "/naildisease/static/css/main.4206c525.css",
+    "main.js": "/naildisease/static/js/main.570ea7b0.js",
     "static/js/787.4854053c.chunk.js": "/naildisease/static/js/787.4854053c.chunk.js",
     "static/media/Carouselimg.png": "/naildisease/static/media/Carouselimg.e3de28f2f8d39a591371.png",
     "static/media/intro.png": "/naildisease/static/media/intro.49298f2e5cd1a809559b.png",
@@ -16,15 +16,17 @@
     "static/media/whitedot8.png": "/naildisease/static/media/whitedot8.b2bff16b053b690fcf3a.png",
     "static/media/naillogo.png": "/naildisease/static/media/naillogo.8c5d01a62e59d9a18727.png",
     "static/media/beaus.jpg": "/naildisease/static/media/beaus.e5299f262f20c818787c.jpg",
+    "static/media/clubbing2.jpg": "/naildisease/static/media/clubbing2.df8e212c1425c33c5784.jpg",
+    "static/media/clubbing3.webp": "/naildisease/static/media/clubbing3.a16df129ea4a134db4d0.webp",
     "static/media/graynail.jpg": "/naildisease/static/media/graynail.e1dc1e566132000ae2b1.jpg",
     "static/media/clubbing.jpg": "/naildisease/static/media/clubbing.dcb091ef2e3e11587cfc.jpg",
     "index.html": "/naildisease/index.html",
-    "main.fb5eb1f7.css.map": "/naildisease/static/css/main.fb5eb1f7.css.map",
-    "main.6e2985bc.js.map": "/naildisease/static/js/main.6e2985bc.js.map",
+    "main.4206c525.css.map": "/naildisease/static/css/main.4206c525.css.map",
+    "main.570ea7b0.js.map": "/naildisease/static/js/main.570ea7b0.js.map",
     "787.4854053c.chunk.js.map": "/naildisease/static/js/787.4854053c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb5eb1f7.css",
-    "static/js/main.6e2985bc.js"
+    "static/css/main.4206c525.css",
+    "static/js/main.570ea7b0.js"
   ]
 }
