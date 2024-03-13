@@ -7,9 +7,14 @@ p {
 }
 
 .nail-logo{
-    width: 7%;    
+    width: 5%;    
 }
 
+@media (max-width: 768px) {
+    .nail-logo{
+        width: 12%;    
+    }
+}
 h2 {
     font-size: 300%;
 }
@@ -22,8 +27,8 @@ h3 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
-    height: 500px;
+    width: 80%;
+    height: 550px;
 }
 
 @media (max-width: 768px) {
@@ -37,7 +42,7 @@ h3 {
 }
 
 .custom-carousel {
-    width: 65%; 
+    width: 70%; 
     margin: 0 auto; 
     /* background-color: rgb(100, 100, 100); */
 }
@@ -76,6 +81,10 @@ h3 {
     }
 }
 
+.disease-image {
+    border-radius: 4%;
+}
+
 .custom-ul {
     list-style-type: disc; 
     margin-left: 20px;
@@ -84,4 +93,9 @@ h3 {
 hr {
     border-width: 2px;
     border-style: dashed;
+    color: orange;
+}
+
+.clubbing {
+    background-color: rgb(223, 222, 222);
 }
