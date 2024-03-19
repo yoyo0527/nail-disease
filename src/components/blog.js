@@ -416,7 +416,7 @@ function AppBlog() {
                 </Card>
               </div>
             </Col>
-            <Col sm={4}>
+            {/* <Col sm={4}>
               <div className='holder'>
                 <Card>
                     <Card.Img variant="top" src={require('../assets/images/clubbing2.jpg')} className='disease-image'/>
@@ -504,7 +504,7 @@ function AppBlog() {
                     </Card.Body>
                 </Card>
               </div>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </section>
