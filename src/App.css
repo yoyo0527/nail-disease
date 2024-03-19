@@ -430,12 +430,12 @@ textarea {
 
 #header {
   padding: 15px 0;
-  position: fixed;
+  position: flex;
   left: 0;
   right: 0;
   top: 0;
   z-index: 9999;
-  background: #fff;
+  background: linear-gradient(to right, rgba(0,85,119), rgb(0,139,154));
   box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.5s linear;
 }
@@ -447,13 +447,14 @@ textarea {
 }
 
 #header .navbar-brand {
-  color: #f64b4b;
+  color: #f5f2f2;
   text-transform: uppercase;
   font-weight: 600;
   height: auto;
   padding: 1;
   font-size: 22px;
   line-height: 1.6;
+  margin-top: 1%;
 }
 
 #header .navbar-collapse {
@@ -471,17 +472,27 @@ textarea {
 }
 
 #header .navbar-collapse a {
-  color: #3f829f;
+  color: #fcfcfd;
   position: relative;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
-#header .navbar-collapse a:hover,
-#header .navbar-collapse a.active {
-  background: none;
-  color: #f64b4b;
+#header .navbar-collapse a:hover{
+  background: #cccccc;
+  color: #052e53;
+  opacity: 1;
 }
 
-#header .navbar-collapse a:hover:before,
+/* #header .navbar-collapse a.active {
+  color: #042039;
+} */
+
+/* #header .navbar-collapse a:hover:before{
+  background-color: #cccccc;
+} */
+
 #header .navbar-collapse a.active:before {
   right: 7px;
   left: 8px;
@@ -490,19 +501,19 @@ textarea {
 
 #header .navbar-collapse a:before {
   content: '';
-  background: #f64b4b;
-  height: 1px;
+  background: #ef9504;
+  height: 2px;
   position: absolute;
   bottom: 7px;
   left: -20px;
   right: 100%;
-  transition: all 0.3s linear;
-  -webkit-transition: all 0.3s linear;
+  /* transition: all 0.3s linear; */
+  /* -webkit-transition: all 0.3s linear; */
   opacity: 0;
 }
 
 #footer {
-  background: #f64b4b;
+  background: rgb(0,139,154);
   padding: 50px 0;
   color: #fff;
   text-align: center;
@@ -637,7 +648,7 @@ textarea {
 
 .works-block .portfoliolist>div h3 {
   margin: 0 0 5px;
-  color: #f64b4b;
+  color: #fefafa;
   font-size: 16px;
 }
 

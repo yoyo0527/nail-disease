@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import Card from 'react-bootstrap/Card';
+// import Col from 'react-bootstrap/Col';
+// import Image from 'react-bootstrap/Image';
+// import Card from 'react-bootstrap/Card';
 import scorepic from '../assets/images/score.png'
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
@@ -90,32 +90,32 @@ import { useNavigate } from 'react-router-dom';
 //     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
 //   }
 // ]
-const blogData = [
-  {
-    id: 1,
-    image: require('../assets/images/blog1.jpg'),
-    time: '15 Nov 2016',
-    title: 'Coffee Lovers',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
-    link: 'https://www.google.com'
-  },
-  // {
-  //   id: 2,
-  //   image: require('../assets/images/blog2.jpg'),
-  //   time: '10 Nov 2016',
-  //   title: 'Tips for UI Design',
-  //   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
-  //   link: 'https://www.facebook.com'
-  // },
-  // {
-  //   id: 3,
-  //   image: require('../assets/images/blog3.jpg'),
-  //   time: '07 Nov 2016',
-  //   title: 'Beautiful Day',
-  //   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
-  //   link: 'https://www.twitter.com'
-  // }
-]
+// const blogData = [
+//   {
+//     id: 1,
+//     image: require('../assets/images/blog1.jpg'),
+//     time: '15 Nov 2016',
+//     title: 'Coffee Lovers',
+//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
+//     link: 'https://www.google.com'
+//   },
+//   {
+//     id: 2,
+//     image: require('../assets/images/blog2.jpg'),
+//     time: '10 Nov 2016',
+//     title: 'Tips for UI Design',
+//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
+//     link: 'https://www.facebook.com'
+//   },
+//   {
+//     id: 3,
+//     image: require('../assets/images/blog3.jpg'),
+//     time: '07 Nov 2016',
+//     title: 'Beautiful Day',
+//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
+//     link: 'https://www.twitter.com'
+//   }
+// ]
 
 function AppTeams() {
   const [q, setQ] = useState(false);    

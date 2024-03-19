@@ -7,8 +7,10 @@ function AppHeader() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <img className="nail-logo" src={naillogo} alt="..." />
-        <Navbar.Brand href="/naildisease">naildisease</Navbar.Brand>
+        <div className="brand-wrapper">
+          <img className="nail-logo" src={naillogo} alt="..." />
+          <Navbar.Brand href="/naildisease">Nail Disease</Navbar.Brand>
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
