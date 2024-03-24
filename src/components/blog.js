@@ -134,7 +134,7 @@ function AppBlog() {
                 </Card>
               </div>
             </Col>
-            <hr/>
+            <hr className='hr-design'/>
             <Col sm={4}>
               <div className='holder'>
                 <Card>
@@ -151,19 +151,19 @@ function AppBlog() {
                           <li>指甲<b>出現變形、混濁，儘快去看皮膚科醫師</b>​</li>
                         </ul>
                       </Card.Text>
-                      <hr/>
+                      <hr className='hr-design'/>
                       <Card.Text>
                         <ul className="custom-ul">
                           <li><b>避免手腳泡水</b>、赤腳走濕濕的路​</li>
                         </ul>
                       </Card.Text>
-                      <hr/>
+                      <hr className='hr-design'/>
                       <Card.Text>
                         <ul className="custom-ul">
                           <li>手腳<b>不共用同一支指甲剪</b>，並定期消毒​</li>
                         </ul>
                       </Card.Text>
-                      <hr/>
+                      <hr className='hr-design'/>
                       <Card.Text>
                         <ul className="custom-ul">
                           <li>穿吸汗的襪子，儘量<b>讓腳部通風​</b></li>
@@ -239,7 +239,7 @@ function AppBlog() {
                 </Modal.Body>
               </Modal>
             </Col>
-            <hr/>
+            <hr className='hr-design'/>
             <Col sm={4}>
               <div className='holder'>
                 <Card>

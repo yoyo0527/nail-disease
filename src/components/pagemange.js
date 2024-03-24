@@ -6,11 +6,10 @@ import AppAbout from './about';
 import AppServices from './services';
 import AppWorks from './works';
 import AppTeams from './teams';
-import AppTestimonials from './testimonials';
-import AppPricing from './pricing';
 import AppBlog from './blog';
-import AppContact from './contact';
 import AppFooter from './footer';
+import Beforetestpage from './Beforetest';
+import Aftertestpage from './Aftertest';
 
 export function Home() {
   return (
@@ -82,6 +81,41 @@ export function Videopage() {
         <AppHero />
         {/* <AppWorks /> */}
         <AppTeams />
+      </main>
+      <footer id="footer">
+        <AppFooter />
+      </footer>
+    </div>
+  );
+}
+
+export function Beforetest() {
+  return (
+    <div className="home">
+      <header id='header'>
+        <AppHeader />
+      </header>
+      <main>
+        <AppHero />
+        <Beforetestpage/>
+      </main>
+      <footer id="footer">
+        <AppFooter />
+      </footer>
+    </div>
+  );
+}
+
+export function Aftertest() {
+  return (
+    <div className="home">
+      <header id='header'>
+        <AppHeader />
+      </header>
+      <main>
+        <AppHero />
+        {/* <AppWorks /> */}
+        <Aftertestpage/>
       </main>
       <footer id="footer">
         <AppFooter />

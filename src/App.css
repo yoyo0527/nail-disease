@@ -194,8 +194,30 @@ ul,
   line-height: 18px;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: left;
   transition: background 0.3s linear, color 0.3s linear;
   -webkit-transition: background 0.3s linear, color 0.3s linear;
+  width: 570px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .btn.btn-answer {
+    background: #dcdedd;
+    border-color: #333532;
+    padding: 13px 35px;
+    font-size: 120%;
+    line-height: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: left;
+    transition: background 0.3s linear, color 0.3s linear;
+    -webkit-transition: background 0.3s linear, color 0.3s linear;
+    width: 300px;
+    display: block;
+    margin: 0 auto;  
+  }
 }
 
 .btn.btn-answer:focus,
@@ -459,11 +481,11 @@ textarea {
 
 #header .navbar-collapse {
   flex-grow: 0;
+  padding-right: 300px;
 }
 
 #header .navbar-collapse .navbar-nav {
   font-size: 15px;
-  line-height: 20px;
 }
 
 
@@ -476,7 +498,7 @@ textarea {
   position: relative;
   font-weight: 600;
   border-radius: 10px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 #header .navbar-collapse a:hover{

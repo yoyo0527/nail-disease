@@ -8,114 +8,6 @@ import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
-// const teamsData = [
-//   {
-//     id: 1,
-//     image: require('../assets/images/team1.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'Gabriel Hart',
-//     designation: 'CEO',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   },
-//   {
-//     id: 2,
-//     image: require('../assets/images/team2.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'David Antony',
-//     designation: 'Manager',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   },
-//   {
-//     id: 3,
-//     image: require('../assets/images/team3.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'Nicholas Perry',
-//     designation: 'UX Designer',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   },
-//   {
-//     id: 4,
-//     image: require('../assets/images/team4.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'Sarah Wills',
-//     designation: 'Developer',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   },
-//   {
-//     id: 5,
-//     image: require('../assets/images/team5.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'Sophia Pitt',
-//     designation: 'Developer',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   },
-//   {
-//     id: 6,
-//     image: require('../assets/images/team6.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'Taylor Lopez',
-//     designation: 'Developer',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   },
-//   {
-//     id: 7,
-//     image: require('../assets/images/team7.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'Ryan Giggs',
-//     designation: 'Content Writer',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   },
-//   {
-//     id: 8,
-//     image: require('../assets/images/team8.jpg'),
-//     fbLink: 'https://www.facebook.com',
-//     twitterLink: 'https://www.twitter.com',
-//     linkedinLink: 'https://www.linkedin.com',
-//     name: 'David Smith',
-//     designation: 'SEO Expert',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui facilis, totam maiores.'
-//   }
-// ]
-// const blogData = [
-//   {
-//     id: 1,
-//     image: require('../assets/images/blog1.jpg'),
-//     time: '15 Nov 2016',
-//     title: 'Coffee Lovers',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
-//     link: 'https://www.google.com'
-//   },
-//   {
-//     id: 2,
-//     image: require('../assets/images/blog2.jpg'),
-//     time: '10 Nov 2016',
-//     title: 'Tips for UI Design',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
-//     link: 'https://www.facebook.com'
-//   },
-//   {
-//     id: 3,
-//     image: require('../assets/images/blog3.jpg'),
-//     time: '07 Nov 2016',
-//     title: 'Beautiful Day',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt.',
-//     link: 'https://www.twitter.com'
-//   }
-// ]
 
 function AppTeams() {
   const [q, setQ] = useState(false);    
@@ -557,7 +449,7 @@ function AppTeams() {
         </div>
         <Row>
           <iframe className='video-set' src="https://www.youtube.com/embed/UflwfRh_nZY" allowFullScreen/>
-          <hr/>
+          {/* <hr className='hr-design'/>
           <a className="btn btn-primary" onClick={handletest1} style={{width:'12%'}}>前測<i className="fas fa-chevron-right"></i></a>
           <a className="btn btn-success" onClick={handletest2} style={{width:'12%'}}>後測<i className="fas fa-chevron-right"></i></a>
           {result && (
@@ -575,54 +467,7 @@ function AppTeams() {
 
                                     
             </div>
-          )}          
-{/* {
-            blogData.map(blog => {
-              return (
-                <Col sm={4} key={blog.id}>
-                  <div className='holder'>
-                    <Card>
-                      <Card.Img variant="top" src={blog.image} />
-                      <Card.Body>
-                        <time>{blog.time}</time>
-                        <Card.Title>{blog.title}</Card.Title>
-                        <Card.Text>
-                          {blog.description}
-                        </Card.Text>
-                        <a href={blog.link} className="btn btn-primary">Read More <i className="fas fa-chevron-right"></i></a>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                </Col>
-              )
-            })
-          }
- */}
-          {/* {
-            teamsData.map(teams => {
-              return (
-                <Col sm={3} key={teams.id}>
-                  <div className='image'>
-                    <Image src={teams.image} />
-                    <div className='overlay'>
-                      <div className='socials'>
-                        <ul>
-                          <li><a href={teams.fbLink}><i className="fab fa-facebook-f"></i></a></li>
-                          <li><a href={teams.twitterLink}><i className="fab fa-twitter"></i></a></li>
-                          <li><a href={teams.linkedinLink}><i className="fab fa-linkedin-in"></i></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='content'>
-                    <h3>{teams.name}</h3>
-                    <span className='designation'>{teams.designation}</span>
-                    <p>{teams.description}</p>
-                  </div>
-                </Col>
-              );
-            })
-          } */}
+          )}           */}
         </Row>
       </Container>
     </section>
