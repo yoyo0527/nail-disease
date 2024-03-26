@@ -469,23 +469,25 @@ textarea {
 }
 
 #header .navbar-brand {
-  color: #f5f2f2;
+  color: #74cefe;
   text-transform: uppercase;
   font-weight: 600;
   height: auto;
-  padding: 1;
-  font-size: 22px;
+  font-size: 25px;
   line-height: 1.6;
-  margin-top: 1%;
+  display: flex; 
+  align-items: center; 
 }
 
 #header .navbar-collapse {
   flex-grow: 0;
-  padding-right: 300px;
+  width: 700px;
+  margin: 0 auto;
 }
 
 #header .navbar-collapse .navbar-nav {
   font-size: 15px;
+  width: 100%;
 }
 
 
@@ -498,7 +500,6 @@ textarea {
   position: relative;
   font-weight: 600;
   border-radius: 10px;
-  /* margin-right: 10px; */
 }
 
 #header .navbar-collapse a:hover{
@@ -516,7 +517,7 @@ textarea {
 } */
 
 #header .navbar-collapse a.active:before {
-  right: 7px;
+  right: 8px;
   left: 8px;
   opacity: 1;
 }
@@ -917,6 +918,9 @@ textarea {
 
 .blog-block {
   background: #f2f2f2;
+  display: flex; /* 使用 Flexbox 佈局 */
+  flex-wrap: wrap; /* 允許子元素換行 */
+  align-items: stretch;
 }
 
 .blog-block.content-block .holder:hover {
@@ -951,6 +955,8 @@ textarea {
   background: #fff;
   padding: 15px;
   transition: box-shadow 0.3s linear;
+  border-radius: 10px;
+  height: 100%;
 }
 
 .blog-block .holder:hover {

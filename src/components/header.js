@@ -1,19 +1,18 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import naillogo from '../assets/images/naillogo.png';
 
 function AppHeader() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
         <div className="brand-wrapper">
-          <img className="nail-logo" src={naillogo} alt="..." />
+          <img className="nail-logo" src={require('../assets/images/handlogo.png')} alt="..." />
           <Navbar.Brand href="/naildisease">Nail Disease</Navbar.Brand>
         </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav >
             <Nav.Link href="/naildisease">首頁</Nav.Link>
             <hr className="nav-divider" />
             <Nav.Link href="/naildisease/purpose">目的</Nav.Link>
@@ -26,11 +25,7 @@ function AppHeader() {
             <hr className="nav-divider" />
             <Nav.Link href="/naildisease/beforetest">前測</Nav.Link>
             <hr className="nav-divider" />
-            <Nav.Link href="/naildisease/aftertest">後測</Nav.Link>
-            {/* <Nav.Link href="#testimonials">Testimonials</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <Nav.Link href="#blog">Blog</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link> */}
+            <Nav.Link href="/naildisease/aftertest" style={{width:58}}>後測</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

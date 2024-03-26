@@ -39,7 +39,7 @@ function AppServices() {
                     <i className={services.icon}></i>
                   </div>
                   <h3><b>{services.title}</b></h3>
-                  <p>{services.description}</p>
+                  <p style={{lineHeight: 2}}>{services.description}</p>
                 </Col>
               );
             })

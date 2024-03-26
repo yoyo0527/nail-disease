@@ -174,7 +174,7 @@ function AppBlog() {
               </div>
               <Modal show={showModal2} onHide={handleCloseModal2} centered>
                 <Modal.Body>
-                  <img src={require('../assets/images/graynail4.jpg')} alt="graynail" className='modal-image' />
+                  <img src={require('../assets/images/graynail4.jpg')} alt="graynail" className='modal-image'/>
                 </Modal.Body>
               </Modal>
 

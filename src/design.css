@@ -7,17 +7,18 @@ p {
 }
 
 .nail-logo {
-    width: 10%;
-    margin-right: 5%;    
+    width: 25%;
+}
+
+@media (max-width: 768px) {
+    .nail-logo{
+        width: 25%;    
+    }
 }
 
 .brand-wrapper {
     display: flex;
-}
-@media (max-width: 768px) {
-    .nail-logo{
-        width: 12%;    
-    }
+    width: 300px;
 }
 
 h2 {
@@ -47,9 +48,9 @@ h3 {
 }
 
 .custom-carousel {
-    width: 70%; 
+    width: 65%; 
     margin: 0 auto; 
-    /* background-color: rgb(100, 100, 100); */
+    border-radius: 10px;
 }
 
 
@@ -64,6 +65,7 @@ h3 {
 .slide-image {
     display: block;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -99,12 +101,16 @@ h3 {
     border-width: 2px;
     border-style: dashed;
     color: orange;
+    margin-top: 1.5%;
 }
 
 .nav-divider {
     border-width: 2px;
     border-style: solid;
     color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+
 }
 
 .clubbing {
