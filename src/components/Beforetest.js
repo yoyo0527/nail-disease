@@ -17,7 +17,7 @@ export default function Beforetestpage() {
     switch (q) {
         case 0:
             setResult({
-                'ques': '非監督式學習的一個例子是什麼？',
+                'ques': '1-10 非監督式學習的一個例子是什麼？',
                 'a': '驗證垃圾郵件的分類',
                 'b': '預測股票市場的趨勢',
                 'c': '將相似的新聞文章分組',
@@ -26,7 +26,7 @@ export default function Beforetestpage() {
             break;
         case 1:
             setResult({
-                'ques': '深度學習中的"深度"是指什麼？',
+                'ques': '2-10 深度學習中的"深度"是指什麼？',
                 'a': '模型的層數',
                 'b': '模型的學習速度',
                 'c': '模型的複雜性',
@@ -35,7 +35,7 @@ export default function Beforetestpage() {
             break;
         case 2:
             setResult({
-                'ques': '機器學習中，模型訓練的目的是什麼？',
+                'ques': '3-10 機器學習中，模型訓練的目的是什麼？',
                 'a': '讓模型能夠擁有最大的參數',
                 'b': '讓模型能夠完美地擬合訓練數據',
                 'c': '讓模型能夠泛化到新的數據',
@@ -44,7 +44,7 @@ export default function Beforetestpage() {
             break;
         case 3:
             setResult({
-                'ques': '監督式學習的一個應用是什麼？',
+                'ques': '4-10 監督式學習的一個應用是什麼？',
                 'a': '預測天氣的變化',
                 'b': '識別垃圾郵件',
                 'c': '分析市場行為',
@@ -53,7 +53,7 @@ export default function Beforetestpage() {
             break;
         case 4:
             setResult({
-                'ques': '強化學習的一個例子是什麼？',
+                'ques': '5-10 強化學習的一個例子是什麼？',
                 'a': '通過分析大量影片來學習物體辨識',
                 'b': '使用大量圖像數據訓練神經網路',
                 'c': '通過與環境的互動來教導機器人走路',
@@ -62,7 +62,7 @@ export default function Beforetestpage() {
             break;
         case 5:
             setResult({
-                'ques': '半監督式學習的一個應用是什麼？',
+                'ques': '6-10 半監督式學習的一個應用是什麼？',
                 'a': '使用標記和未標記的數據訓練圖像分割模型',
                 'b': '利用有限標記的數據和大量未標記的數據進行情感分析',
                 'c': '使用監督式和非監督式學習模型進行股票價格預測',
@@ -71,7 +71,7 @@ export default function Beforetestpage() {
             break;
         case 6:
             setResult({
-                'ques': '機器學習中的監督式學習是指：',
+                'ques': '7-10 機器學習中的監督式學習是指：',
                 'a': '模型自行發現模式和特徵',
                 'b': '使用帶有標籤的數據進行訓練',
                 'c': '模型與環境互動學習',
@@ -80,7 +80,7 @@ export default function Beforetestpage() {
             break;
         case 7:
             setResult({
-                'ques': '在機器學習中，強化學習強調的是：',
+                'ques': '8-10 在機器學習中，強化學習強調的是：',
                 'a': '模型與環境的互動學習',
                 'b': '使用帶有標籤的數據進行訓練',
                 'c': '使用帶有標籤的數據進行訓練',
@@ -89,7 +89,7 @@ export default function Beforetestpage() {
             break;
         case 8:
             setResult({
-                'ques': '機器學習中的非監督式學習是指：',
+                'ques': '9-10 機器學習中的非監督式學習是指：',
                 'a': '模型自行發現模式和特徵',
                 'b': '使用帶有標籤的數據進行訓練',
                 'c': '模型與環境互動學習',
@@ -98,7 +98,7 @@ export default function Beforetestpage() {
             break;
         case 9:
             setResult({
-                'ques': '機器學習中的「深度學習」是指什麼？',
+                'ques': '10-10 機器學習中的「深度學習」是指什麼？',
                 'a': '模型通過與環境的互動進行學習',
                 'b': '模型使用帶有標籤的數據進行訓練',
                 'c': '神經網絡的多層結構',

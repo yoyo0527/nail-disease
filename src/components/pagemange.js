@@ -26,7 +26,6 @@ export function Home() {
         <AppHero />
         <AppAbout />
         <AppServices />
-        {/* <AppServices /> */}
         {/* <AppWorks /> */}
         {/* <AppTeams /> */}
         {/* <AppTestimonials /> */}
