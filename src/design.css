@@ -48,7 +48,7 @@ h3 {
 }
 
 .custom-carousel {
-    width: 65%; 
+    width: 55%; 
     margin: 0 auto; 
 }
 
@@ -57,13 +57,13 @@ h3 {
     .custom-carousel {
         width: 100%; 
         margin: 0 auto; 
-        /* background-color: rgb(100, 100, 100); */
     }
 }
 
 .slide-image {
     display: block;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -75,19 +75,11 @@ h3 {
 .detect-image {
     width: 100%;
     height: 25vh;
-    border-radius: 3%;
+    border-radius: 10px;
 }
 
-/* @media (max-width: 768px) {
-    .detect-image {
-        width: 100%;
-        height: 33vh;
-        border-radius: 4%;
-    }
-} */
-
 .disease-image {
-    border-radius: 3%;
+    border-radius: 10px;
     width: 100%;
 }
 
@@ -113,7 +105,7 @@ h3 {
 }
 
 .blogblock-gray {
-    background-color: rgb(223, 222, 222);
+    background-color: rgb(231, 231, 231);
 }
 
 .team-block {

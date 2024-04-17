@@ -16,8 +16,6 @@ function AppHeader() {
           <Nav >
             <Nav.Link href="/naildisease">首頁</Nav.Link>
             <hr className="nav-divider" />
-            <Nav.Link href="/naildisease/purpose">目的</Nav.Link>
-            <hr className="nav-divider" />
             <Nav.Link href="/naildisease/disease">辨識的疾病</Nav.Link>
             <hr className="nav-divider" />
             <Nav.Link href="/naildisease/skill">運用技術</Nav.Link>

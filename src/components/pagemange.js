@@ -25,6 +25,7 @@ export function Home() {
       <main>
         <AppHero />
         <AppAbout />
+        <AppServices />
         {/* <AppServices /> */}
         {/* <AppWorks /> */}
         {/* <AppTeams /> */}
@@ -32,24 +33,6 @@ export function Home() {
         {/* <AppPricing /> */}
         {/* <AppBlog /> */}
         {/* <AppContact /> */}
-      </main>
-      <footer id="footer">
-        <AppFooter />
-      </footer>
-    </div>
-  );
-}
-
-// 目的
-export function Purpose() {
-  return (
-    <div className="home">
-      <header id='header'>
-        <AppHeader />
-      </header>
-      <main>
-        <AppHero />
-        <AppServices />
       </main>
       <footer id="footer">
         <AppFooter />
