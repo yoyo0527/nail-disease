@@ -1,3 +1,4 @@
+// 導覽列
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -19,7 +20,7 @@ function AppHeader() {
             <hr className="nav-divider" />
             <Nav.Link href="/naildisease/disease">辨識的疾病</Nav.Link>
             <hr className="nav-divider" />
-            <Nav.Link href="#works">運用技術</Nav.Link>
+            <Nav.Link href="/naildisease/skill">運用技術</Nav.Link>
             <hr className="nav-divider" />
             <Nav.Link href="/naildisease/video">觀看影片</Nav.Link>
             <hr className="nav-divider" />

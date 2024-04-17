@@ -50,7 +50,6 @@ h3 {
 .custom-carousel {
     width: 65%; 
     margin: 0 auto; 
-    border-radius: 10px;
 }
 
 
@@ -65,7 +64,6 @@ h3 {
 .slide-image {
     display: block;
     margin: 0 auto;
-    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -77,19 +75,20 @@ h3 {
 .detect-image {
     width: 100%;
     height: 25vh;
-    border-radius: 4%;
+    border-radius: 3%;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .detect-image {
         width: 100%;
-        height: 25vh;
+        height: 33vh;
         border-radius: 4%;
     }
-}
+} */
 
 .disease-image {
-    border-radius: 4%;
+    border-radius: 3%;
+    width: 100%;
 }
 
 .custom-ul {
@@ -98,9 +97,9 @@ h3 {
 }
   
 .hr-design {
-    border-width: 2px;
+    border-width: 5px;
     border-style: dashed;
-    color: orange;
+    color: rgb(10, 69, 127);
     margin-top: 1.5%;
 }
 
@@ -113,7 +112,7 @@ h3 {
 
 }
 
-.clubbing {
+.blogblock-gray {
     background-color: rgb(223, 222, 222);
 }
 

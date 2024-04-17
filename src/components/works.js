@@ -1,14 +1,14 @@
+// 快速跳到內容
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import Pagination from 'react-bootstrap/Pagination';
 
 const worksData = [
   {
     id: 1,
     link: '#graynail',
-    image: require('../assets/images/graynail.jpg'),
+    image: require('../assets/images/graynail2.gif'),
     title: '灰指甲',
   },
   {
@@ -31,6 +31,12 @@ const worksData = [
   },
   {
     id: 5,
+    link: '#nailbroken',
+    image: require('../assets/images/nailbroken.png'),
+    title: '指甲剝離',
+  },
+  {
+    id: 6,
     link: '#whitedot',
     image: require('../assets/images/whitedot8.png'),
     title: '白甲',

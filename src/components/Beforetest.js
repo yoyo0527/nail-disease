@@ -1,12 +1,10 @@
+// 前測頁面
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import Image from 'react-bootstrap/Image';
-// import Card from 'react-bootstrap/Card';
 import scorepic from '../assets/images/score.png'
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { Card, Col, Row } from 'react-bootstrap';
 
 
 export default function Beforetestpage() {
@@ -233,23 +231,34 @@ export default function Beforetestpage() {
 
 
   return (
-    <section id="teams" className="block teams-block">
+    <section id="teams" className="block blog-block">
       <Container fluid>
-        <div className="title-holder">
-          <h2><b>前測</b></h2>
-        </div>
-        <div className='testblock'>
-            <h3>{result.ques}</h3>
-            <a className="btn btn-answer mb-2" onClick={handleAns('a')}>(A) {result.a}</a>
-            <br/>
-            <a className="btn btn-answer mb-2" onClick={handleAns('b')}>(B) {result.b}</a>
-            <br/>
-            <a className="btn btn-answer mb-2" onClick={handleAns('c')}>(C) {result.c}</a>
-            <br/>
-            <a className="btn btn-answer mb-2" onClick={handleAns('d')}>(D) {result.d}</a>
-        </div>
+        <Row>
+            <Col sm={12} >
+                <div className='holder' >
+                    <Card>
+                        <div className="title-holder">
+                        <h2><b>前測</b></h2>
+                        </div>
+                        <div className='testblock'>
+                            <h3>{result.ques}</h3>
+                            <a className="btn btn-answer mb-2" onClick={handleAns('a')}>(A) {result.a}</a>
+                            <br/>
+                            <a className="btn btn-answer mb-2" onClick={handleAns('b')}>(B) {result.b}</a>
+                            <br/>
+                            <a className="btn btn-answer mb-2" onClick={handleAns('c')}>(C) {result.c}</a>
+                            <br/>
+                            <a className="btn btn-answer mb-2" onClick={handleAns('d')}>(D) {result.d}</a>
+                        </div>
+                    </Card>
+                </div>
+                
+            </Col>
+
+        </Row>
       </Container>
     </section>
+    
   );
 }
 

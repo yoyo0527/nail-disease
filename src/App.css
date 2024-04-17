@@ -694,7 +694,7 @@ textarea {
   background: #666;
   cursor: pointer;
   height: auto;
-  width: 100%;
+  width: 90%;
   border-radius: 4%;
 }
 
@@ -953,9 +953,9 @@ textarea {
 
 .blog-block .holder {
   background: #fff;
-  padding: 15px;
+  padding: 3%;
   transition: box-shadow 0.3s linear;
-  border-radius: 10px;
+  border-radius: 2%;
   height: 100%;
 }
 
@@ -965,15 +965,16 @@ textarea {
 
 .blog-block .card {
   border: 0;
+  line-height: 1.5;
 }
 
 .blog-block .card-body {
   padding: 0;
 }
 
-.blog-block img {
+/* .blog-block img {
   margin: 0 0 15px;
-}
+} */
 
 .blog-block time {
   display: block;
