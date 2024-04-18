@@ -19,7 +19,24 @@ function AppAbout() {
       .catch(error => {
         console.error('Error:', error);
       });
-  }, []);  return (
+
+    // 在組件首次渲染時發送 POST 請求
+    // fetch('http://127.0.0.1:5000/recognize-nail', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({ key: 'value' }) // 將你要發送的數據轉換為 JSON 格式
+    // })
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     // 在這裡處理 POST 請求返回的數據
+    //   })
+    //   .catch(error => {
+    //     console.error('Error:', error);
+    //   });
+  }, []);  
+  return (
     <section id="about" className="block about-block">
       <Container fluid>
         <div className="title-holder">
