@@ -11,7 +11,7 @@ function AppAbout() {
 
   useEffect(() => {
     // 在組件首次渲染時發送 GET 請求
-    fetch('http://192.168.0.134:8080/recognize-nail')
+    fetch('//192.168.0.134:8080/recognize-nail')
       .then(response => response.json())
       .then(data => {
         setResult(data.result); // 更新組件狀態，將結果保存下來
