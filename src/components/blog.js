@@ -257,6 +257,47 @@ function AppBlog() {
         </Container>
       </section>
 
+      {/* 健康指甲 */}
+      <section id="healthy_nail" className="block blog-block nailbroken">
+        <Container fluid>
+          <div className="title-holder">
+            <h2>健康指甲</h2>
+          </div>
+          <Row>
+            <Col sm={6}>
+              <div className='holder' >
+                <Card>
+                  <Card.Img variant="top" src={require('../assets/images/healthynailcontent.jpg')} className='disease-image'/>
+                </Card>
+              </div>
+            </Col>
+            <Col sm={6}>
+              <div className='holder' style={{display:'flex', alignItems:'center'}}>
+                <Card>
+                  <Card.Img variant="top" src={require('../assets/images/healthynail2.jpg')} className='disease-image'/>
+                </Card>
+              </div>
+            </Col>
+            <hr className='hr-design'/>
+            <Col sm={6}>
+              <div className='holder' style={{display:'flex', alignItems:'center'}}>
+                <Card>
+                  <Card.Img variant="top" src={require('../assets/images/healthynail3.jpg')} className='disease-image'/>
+                </Card>
+              </div>
+            </Col>
+            <Col sm={6}>
+              <div className='holder' style={{display:'flex', alignItems:'center'}}>
+                <Card>
+                  <Card.Img variant="top" src={require('../assets/images/healthynail4.jpg')} className='disease-image'/>
+                </Card>
+              </div>
+            </Col>
+
+          </Row>
+        </Container>
+      </section>
+
     </div>
   )
 }

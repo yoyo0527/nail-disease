@@ -14,6 +14,7 @@ import Aftertestpage from './Aftertest';
 import AppTestimonials from './testimonials';
 import AppPricing from './pricing';
 import AppContact from './contact';
+import Detect from './detect';
 
 // 首頁
 export function Home() {
@@ -126,6 +127,24 @@ export function Aftertest() {
         <AppHero />
         {/* <AppWorks /> */}
         <Aftertestpage/>
+      </main>
+      <footer id="footer">
+        <AppFooter />
+      </footer>
+    </div>
+  );
+}
+
+//辨識畫面
+export function NailDetect() {
+  return (
+    <div className="home">
+      <header id='header'>
+        <AppHeader />
+      </header>
+      <main>
+        <AppHero />
+        <Detect/>
       </main>
       <footer id="footer">
         <AppFooter />

@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { Aftertest, Beforetest, Disease, Home, Skill, Videopage } from './components/pagemange';
+import { Aftertest, Beforetest, Disease, Home, NailDetect, Skill, Videopage } from './components/pagemange';
 import './design.css'
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
           <Route path="/naildisease/video" element ={<Videopage/>} />
           <Route path="/naildisease/beforetest" element ={<Beforetest/>} />
           <Route path="/naildisease/aftertest" element ={<Aftertest/>} />
+          <Route path="/naildisease/detect" element ={<NailDetect/>} />
         </Routes>
       </Router>
     </div>

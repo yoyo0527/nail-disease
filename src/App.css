@@ -135,8 +135,9 @@ ul,
 }
 
 .btn.btn-primary {
-  background: #f64b4b;
-  border-color: #f64b4b;
+  background: #0d235c;
+  border-color: #0ed6ec;
+  border-width: 2px;
   padding: 13px 35px;
   font-size: 120%;
   line-height: 18px;

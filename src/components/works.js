@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
+import { useEffect } from 'react';
 
 const worksData = [
   {
@@ -41,9 +42,28 @@ const worksData = [
     image: require('../assets/images/whitedot8.png'),
     title: '白甲',
   },
+  {
+    id: 7,
+    link: '#healthy_nail',
+    image: require('../assets/images/healthynail.jpg'),
+    title: '健康指甲',
+  },
+
 ]
 
 function AppWorks() {
+  useEffect(() => {
+    // 在頁面載入後檢查 URL 中的 hash，並滾動到對應的位置
+    const hash = window.location.hash;
+    
+    if (hash) {
+      const element = document.querySelector(hash);
+      // console.log(element);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
   return (
     <section id="works" className="block works-block">
       <Container fluid>
