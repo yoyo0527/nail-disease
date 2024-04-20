@@ -58,7 +58,7 @@ function AppWorks() {
     
     if (hash) {
       const element = document.querySelector(hash);
-      // console.log(element);
+      console.log(element);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
