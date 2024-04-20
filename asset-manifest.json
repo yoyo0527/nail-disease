@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/naildisease/static/css/main.1468890d.css",
-    "main.js": "/naildisease/static/js/main.fe48a944.js",
+    "main.js": "/naildisease/static/js/main.987667cb.js",
     "static/js/787.4854053c.chunk.js": "/naildisease/static/js/787.4854053c.chunk.js",
     "static/media/loading.gif": "/naildisease/static/media/loading.5a1c36247ecafcdcc5aa.gif",
     "static/media/Carouselimg.png": "/naildisease/static/media/Carouselimg.e3de28f2f8d39a591371.png",
@@ -51,11 +51,11 @@
     "static/media/clubbing.jpg": "/naildisease/static/media/clubbing.dcb091ef2e3e11587cfc.jpg",
     "index.html": "/naildisease/index.html",
     "main.1468890d.css.map": "/naildisease/static/css/main.1468890d.css.map",
-    "main.fe48a944.js.map": "/naildisease/static/js/main.fe48a944.js.map",
+    "main.987667cb.js.map": "/naildisease/static/js/main.987667cb.js.map",
     "787.4854053c.chunk.js.map": "/naildisease/static/js/787.4854053c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1468890d.css",
-    "static/js/main.fe48a944.js"
+    "static/js/main.987667cb.js"
   ]
 }
