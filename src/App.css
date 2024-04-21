@@ -493,7 +493,7 @@ textarea {
 
 
 #header .navbar-collapse a:last-child {
-  padding-right: 0;
+  padding-right: 10;
 }
 
 #header .navbar-collapse a {

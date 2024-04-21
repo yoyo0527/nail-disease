@@ -26,8 +26,7 @@ function AppHeader() {
             <hr className="nav-divider" />
             <Nav.Link href="/naildisease/aftertest">後測</Nav.Link>
             <hr className="nav-divider" />
-            <Nav.Link href="/naildisease/detect" style={{width:58}}>體驗</Nav.Link>
-
+            <Nav.Link href="/naildisease/detect" >體驗</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
