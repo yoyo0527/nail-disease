@@ -135,7 +135,7 @@ export function Aftertest() {
   );
 }
 
-//辨識畫面
+//體驗
 export function NailDetect() {
   return (
     <div className="home">

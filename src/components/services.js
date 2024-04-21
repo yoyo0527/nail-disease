@@ -29,7 +29,7 @@ function AppServices() {
     <section id="services" className="block services-block">
       <Container fluid>
         <div className="title-holder">
-          <h2><b>目的</b></h2>
+          <h2>目的</h2>
         </div>
         <Row>
           {

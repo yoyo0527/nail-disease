@@ -47,6 +47,14 @@ function AppTestimonials() {
               </Card>
             </div>
           </Col>
+          <hr className='hr-design'/>
+          <Col sm={12}>
+            <div className='holder'>
+              <Card>
+                  <Card.Img variant="top" src={require('../assets/images/skillcontent6.jpg')} className='disease-image'/>
+              </Card>
+            </div>
+          </Col>
 
         </Row>
       </Container>

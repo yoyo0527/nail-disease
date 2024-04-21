@@ -40,7 +40,7 @@ function AppAbout() {
     <section id="about" className="block about-block">
       <Container fluid>
         <div className="title-holder">
-          <h2><b>背景</b></h2>
+          <h2>背景</h2>
         </div>
         <Row>
           <Col sm={6}>
