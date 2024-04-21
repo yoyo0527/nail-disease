@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/naildisease/static/css/main.8a0294f4.css",
-    "main.js": "/naildisease/static/js/main.b3b35b07.js",
+    "main.js": "/naildisease/static/js/main.5b3376ea.js",
     "static/js/787.4854053c.chunk.js": "/naildisease/static/js/787.4854053c.chunk.js",
     "static/media/loading.gif": "/naildisease/static/media/loading.5a1c36247ecafcdcc5aa.gif",
     "static/media/Carouselimg.png": "/naildisease/static/media/Carouselimg.e3de28f2f8d39a591371.png",
@@ -17,6 +17,7 @@
     "static/media/skillcontent4.jpg": "/naildisease/static/media/skillcontent4.406770b1034288cc67c5.jpg",
     "static/media/skillcontent5.jpg": "/naildisease/static/media/skillcontent5.0ae2178e726b9b8f7491.jpg",
     "static/media/whitedot4.jpeg": "/naildisease/static/media/whitedot4.877a8b53055e5c14398d.jpeg",
+    "static/media/skillcontent6.jpg": "/naildisease/static/media/skillcontent6.b7c4d4799d6f699011ce.jpg",
     "static/media/blackline2.png": "/naildisease/static/media/blackline2.48467e91b07584b29af8.png",
     "static/media/graynail2.gif": "/naildisease/static/media/graynail2.a0ef1e89d67b1cf870ac.gif",
     "static/media/Carouselimg4.jpg": "/naildisease/static/media/Carouselimg4.be9ff3d412435abe072f.jpg",
@@ -51,11 +52,11 @@
     "static/media/clubbing.jpg": "/naildisease/static/media/clubbing.dcb091ef2e3e11587cfc.jpg",
     "index.html": "/naildisease/index.html",
     "main.8a0294f4.css.map": "/naildisease/static/css/main.8a0294f4.css.map",
-    "main.b3b35b07.js.map": "/naildisease/static/js/main.b3b35b07.js.map",
+    "main.5b3376ea.js.map": "/naildisease/static/js/main.5b3376ea.js.map",
     "787.4854053c.chunk.js.map": "/naildisease/static/js/787.4854053c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8a0294f4.css",
-    "static/js/main.b3b35b07.js"
+    "static/js/main.5b3376ea.js"
   ]
 }
