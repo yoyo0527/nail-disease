@@ -3,8 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
-import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FileUploader } from 'baseui/file-uploader';
 import Swal from 'sweetalert2';
 import loading from '../assets/images/loading.gif';
@@ -57,12 +56,12 @@ function useFakeProgress() {
 }
 
 export default function Detect() {
-    const [image, setImage] = useState(null);
     const [file, setFile] = useState(null);
     const [progressAmount, startFakeProgress, stopFakeProgress] = useFakeProgress();
     const MySwal = withReactContent(Swal);
     const navigate = useNavigate();
     const [result, setResult] = useState(null);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const handleDrop = (acceptedFiles) => {
         if (acceptedFiles && acceptedFiles.length > 0) {
@@ -91,7 +90,7 @@ export default function Detect() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('https://4f181c81.r26.cpolar.top/upload', {
+            const response = await fetch('https://41819efb.r21.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
             });
@@ -125,15 +124,82 @@ export default function Detect() {
         }
     };
 
-    const handleImageSubmit = async () => {
-        try {
-        // 將 base64 字符串發送到後端 Node.js 伺服器
-        await axios.post('YOUR_BACKEND_URL', { image });
-        console.log('Image uploaded successfully!');
-        } catch (error) {
-        console.error('Error uploading image:', error);
-        }
+    // const width = 300;
+    // const height = 400;
+    const cameraRef = useRef(null);
+    const handleOpenCamera = () => {
+        const videoWidth = cameraRef.current.offsetWidth;
+        const videoHeight = 400;
+
+        navigator.mediaDevices
+        .getUserMedia({
+            video: {
+                width: videoWidth,
+                height: videoHeight,
+                audio: false,
+                deviceId: "default",
+                facingMode: "user",
+            },
+        })
+        .then((stream) => {
+            let video = cameraRef.current;
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch((err) => {
+            console.error("error:", err);
+        });
     };
+
+    const photoRef = useRef(null);
+    const [capturedPhoto, setCapturedPhoto] = useState(null);
+    const handleTakePhoto = () => {
+        const target = photoRef.current;
+        const ctx = target.getContext("2d");
+        const photoWidth = cameraRef.current.offsetWidth;
+        const photoHeight = 400;
+        target.width = photoWidth ;
+        target.height = photoHeight;
+        ctx.translate(photoWidth, 0);
+        ctx.scale(-1, 1);
+        ctx.drawImage(cameraRef.current, 0, 0, photoWidth, photoHeight);
+        // 獲取 Canvas 上的圖像數據
+        const imageDataURL = target.toDataURL();
+        setCapturedPhoto(imageDataURL);
+    };
+
+    const handleSavePhoto = () => {
+        // 將 capturedPhoto 轉換為 Blob 對象
+        const byteCharacters = atob(capturedPhoto.split(',')[1]);
+        const byteNumbers = new Array(byteCharacters.length);
+        for (let i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNumbers);
+        const blob = new Blob([byteArray], { type: 'image/png' });
+
+        // 創建下载連結
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = 'nail.png';
+
+        // 模擬下載連結
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
   return (
     <div>
       {/* 指甲辨識 */}
@@ -142,7 +208,32 @@ export default function Detect() {
           <div className="title-holder">
             <h2>辨識體驗</h2>
           </div>
-          <Row style={{ display: 'flex', justifyContent: 'center' }}>
+          <Row>
+            {windowWidth > 768 && (
+                <Col sm={6}>
+                <div className='holder'>
+                    <Card>
+                        <video ref={cameraRef} style={{ transform: "scaleX(-1)" }}></video>
+                        <Button onClick={handleOpenCamera}>開啟相機</Button>
+                    </Card>
+                </div>
+                </Col>
+            )} 
+            {windowWidth > 768 && (           
+                <Col sm={6}>
+                <div className='holder'>
+                    <Card>
+                        <canvas ref={photoRef}></canvas>
+                        <Button onClick={handleTakePhoto} style={{ marginBottom: '3%' }}>拍照</Button>
+                        <Button onClick={handleSavePhoto}>儲存照片</Button>
+
+                    </Card>
+                </div>
+                </Col>
+            )}
+            {windowWidth > 768 && (           
+                <hr className='hr-design'/>
+            )}
             <Col sm={6}>
               <div className='holder'>
                 <Card>
@@ -158,13 +249,12 @@ export default function Detect() {
                         }
                         className='FileUploader'
                     />
-
-                    
                     <h3><center>{result}</center></h3>
                     <Button onClick={handleUpload}>上傳辨識</Button>
                 </Card>
               </div>
             </Col>
+
           </Row>
         </Container>
       </section>
