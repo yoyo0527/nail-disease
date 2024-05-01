@@ -90,7 +90,7 @@ export default function Detect() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('https://41819efb.r21.cpolar.top/upload', {
+            const response = await fetch('https://5696b5c3.r11.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
             });
