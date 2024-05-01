@@ -62,7 +62,7 @@ function AppWorks() {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 500);     
+      }, 3000);     
     }
   }, []);
   return (
