@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/naildisease/static/css/main.8a0294f4.css",
-    "main.js": "/naildisease/static/js/main.0053b57a.js",
+    "main.js": "/naildisease/static/js/main.f8d55748.js",
     "static/js/787.4854053c.chunk.js": "/naildisease/static/js/787.4854053c.chunk.js",
     "static/media/Carouselimg.png": "/naildisease/static/media/Carouselimg.e3de28f2f8d39a591371.png",
     "static/media/intro.png": "/naildisease/static/media/intro.49298f2e5cd1a809559b.png",
@@ -42,21 +42,21 @@
     "static/media/healthynail3.jpg": "/naildisease/static/media/healthynail3.c05aa7e435814ad503b3.jpg",
     "static/media/nailbroken2.jpg": "/naildisease/static/media/nailbroken2.8c20abc550b1a9278238.jpg",
     "static/media/nailbroken.jpg": "/naildisease/static/media/nailbroken.8b66f887ba77441e4b8f.jpg",
-    "static/media/loading.gif": "/naildisease/static/media/loading.3dcfae5613fb0688be7d.gif",
     "static/media/graynail3.jpg": "/naildisease/static/media/graynail3.c50077e5a74772ff8457.jpg",
     "static/media/beaus.jpg": "/naildisease/static/media/beaus.e5299f262f20c818787c.jpg",
     "static/media/whitedot.png": "/naildisease/static/media/whitedot.693b79ffd651f94bc6dd.png",
     "static/media/clubbing2.jpg": "/naildisease/static/media/clubbing2.df8e212c1425c33c5784.jpg",
     "static/media/clubbing3.webp": "/naildisease/static/media/clubbing3.a16df129ea4a134db4d0.webp",
     "static/media/graynail.jpg": "/naildisease/static/media/graynail.e1dc1e566132000ae2b1.jpg",
+    "static/media/loading.gif": "/naildisease/static/media/loading.d3fa309b2c74b3b2918f.gif",
     "static/media/clubbing.jpg": "/naildisease/static/media/clubbing.dcb091ef2e3e11587cfc.jpg",
     "index.html": "/naildisease/index.html",
     "main.8a0294f4.css.map": "/naildisease/static/css/main.8a0294f4.css.map",
-    "main.0053b57a.js.map": "/naildisease/static/js/main.0053b57a.js.map",
+    "main.f8d55748.js.map": "/naildisease/static/js/main.f8d55748.js.map",
     "787.4854053c.chunk.js.map": "/naildisease/static/js/787.4854053c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8a0294f4.css",
-    "static/js/main.0053b57a.js"
+    "static/js/main.f8d55748.js"
   ]
 }
