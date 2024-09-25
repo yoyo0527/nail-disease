@@ -57,7 +57,7 @@ function AppBlog() {
       </section>
 
       {/* 杵狀指 */}
-      <section id="clubbing" className="block blog-block blogblock-gray">
+      {/* <section id="clubbing" className="block blog-block blogblock-gray">
         <Container fluid>
           <div className="title-holder">
             <h2>杵狀指</h2>
@@ -94,7 +94,7 @@ function AppBlog() {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section> */}
 
       {/* 博氏線 */}
       <section id="beaus" className="block blog-block">

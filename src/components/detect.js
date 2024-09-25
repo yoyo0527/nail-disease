@@ -62,6 +62,8 @@ export default function Detect() {
     const navigate = useNavigate();
     const [result, setResult] = useState(null);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [advice, setAdvice] = useState(null);
+    const [detectresult, setDetectresult] = useState(null);
 
     const handleDrop = (acceptedFiles) => {
         if (acceptedFiles && acceptedFiles.length > 0) {
@@ -79,10 +81,8 @@ export default function Detect() {
             return;
         }
         Swal.fire('Correct', '已上傳辨識!', 'success');
-        // setLoad(loading);
-        // setResult('辨識中...');
         MySwal.fire({
-                        text: '辨識中...(辨識完畢將會自動跳轉頁面',
+                        text: '辨識中...(辨識完畢將會自動關閉',
                         imageUrl: loading,
                         showConfirmButton: false,
                     })
@@ -90,29 +90,54 @@ export default function Detect() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
+            const response = await fetch('http://localhost:5000/upload', {
+            // const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
             });
             const data = await response.json();
             console.log(data);
-
+            setAdvice('等待中....');
             if (data){
                 Swal.fire('Correct', '辨識完畢!', 'success');
+                const uploadtogpt = async (question) => {
+                    const response = await fetch('http://127.0.0.1:5000/ask', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ question: question })
+                    });
+                    const data = await response.json();
+                    setAdvice(data.response);
+                    console.log(advice);
+                };
                 if (data.prediction === 'Onychomycosis') {
-                    navigate('/naildisease/disease#graynail');
+                    uploadtogpt('甲癬');
+                    setDetectresult('甲癬');
                 }else if(data.prediction === 'beau_s') {
-                    navigate('/naildisease/disease#beaus');
+                    uploadtogpt('博氏線');
+                    setDetectresult('博氏線');
+
                 }else if(data.prediction === 'black_line') {
-                    navigate('/naildisease/disease#blackline');
-                }else if(data.prediction === 'clubbing') {
-                    navigate('/naildisease/disease#clubbing');
-                }else if(data.prediction === 'healthy nail') {
-                    navigate('/naildisease/disease#healthy_nail');
+                    uploadtogpt('縱向黑線');
+                    setDetectresult('縱向黑線');
+
+                }
+                // else if(data.prediction === 'clubbing') {
+                //     uploadtogpt('杵狀指');
+                // }
+                else if(data.prediction === 'healthy nail') {
+                    uploadtogpt('健康手指');
+                    setDetectresult('健康手指');
+
                 }else if(data.prediction === 'onycholysis') {
-                    navigate('/naildisease/disease#nailbroken');
+                    uploadtogpt('甲剝離症）');
+                    setDetectresult('甲剝離症）');
+
                 }else if(data.prediction === 'white spot') {
-                    navigate('/naildisease/disease#whitedot');
+                    uploadtogpt('白甲');
+                    setDetectresult('白甲');
                 }else{
                     Swal.fire('Mistake', '上傳辨識失敗!', 'error');
                 }
@@ -124,8 +149,6 @@ export default function Detect() {
         }
     };
 
-    // const width = 300;
-    // const height = 400;
     const cameraRef = useRef(null);
     const handleOpenCamera = () => {
         const videoWidth = cameraRef.current.offsetWidth;
@@ -251,6 +274,15 @@ export default function Detect() {
                     />
                     <h3><center>{result}</center></h3>
                     <Button onClick={handleUpload}>上傳辨識</Button>
+                    <h3 style={{textAlign:'center'}}>辨識結果:{detectresult}</h3>
+                </Card>
+              </div>
+            </Col>
+            <Col sm={6}>
+              <div className='holder'>
+                <Card>
+                    <h3>建議:</h3>
+                    <div dangerouslySetInnerHTML={{ __html: advice }} />
                 </Card>
               </div>
             </Col>

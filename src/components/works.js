@@ -14,36 +14,30 @@ const worksData = [
   },
   {
     id: 2,
-    link: '#clubbing',
-    image: require('../assets/images/clubbing.jpg'),
-    title: '杵狀指',
-  },
-  {
-    id: 3,
     link: '#beaus',
     image: require('../assets/images/beaus.jpg'),
     title: '博氏線',
   },
   {
-    id: 4,
+    id: 3,
     link: '#blackline',
     image: require('../assets/images/blackline.jpg'),
     title: '縱向黑甲症',
   },
   {
-    id: 5,
+    id: 4,
     link: '#nailbroken',
     image: require('../assets/images/nailbroken.png'),
     title: '指甲剝離',
   },
   {
-    id: 6,
+    id: 5,
     link: '#whitedot',
     image: require('../assets/images/whitedot8.png'),
     title: '白甲',
   },
   {
-    id: 7,
+    id: 6,
     link: '#healthy_nail',
     image: require('../assets/images/healthynail.jpg'),
     title: '健康指甲',
@@ -52,19 +46,20 @@ const worksData = [
 ]
 
 function AppWorks() {
-  useEffect(() => {
-    // 在頁面載入後檢查 URL 中的 hash，並滾動到對應的位置
-    const hash = window.location.hash;
+  // useEffect(() => {
+  // 在頁面載入後檢查 URL 中的 hash，並滾動到對應的位置
+  //   const hash = window.location.hash;
     
-    if (hash) {
-      setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 1000);     
-    }
-  }, []);
+  //   if (hash) {
+  //     setTimeout(() => {
+  //       const element = document.querySelector(hash);
+  //       if (element) {
+  //         element.scrollIntoView({ behavior: 'smooth' });
+  //       }
+  //     }, 1000);     
+  //   }
+  // }, []);
+
   return (
     <section id="works" className="block works-block">
       <Container fluid>

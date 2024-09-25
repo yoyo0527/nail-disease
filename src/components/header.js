@@ -18,14 +18,14 @@ function AppHeader() {
             <hr className="nav-divider" />
             <Nav.Link href="/naildisease/disease">辨識的疾病</Nav.Link>
             <hr className="nav-divider" />
-            <Nav.Link href="/naildisease/skill">運用技術</Nav.Link>
-            <hr className="nav-divider" />
-            <Nav.Link href="/naildisease/video">觀看影片</Nav.Link>
-            <hr className="nav-divider" />
-            <Nav.Link href="/naildisease/beforetest">前測</Nav.Link>
-            <hr className="nav-divider" />
-            <Nav.Link href="/naildisease/aftertest">後測</Nav.Link>
-            <hr className="nav-divider" />
+            {/* <Nav.Link href="/naildisease/skill">運用技術</Nav.Link>
+            <hr className="nav-divider" /> */}
+            {/* <Nav.Link href="/naildisease/video">觀看影片</Nav.Link>
+            <hr className="nav-divider" /> */}
+            {/* <Nav.Link href="/naildisease/beforetest">前測</Nav.Link>
+            <hr className="nav-divider" /> */}
+            {/* <Nav.Link href="/naildisease/aftertest">後測</Nav.Link>
+            <hr className="nav-divider" /> */}
             <Nav.Link href="/naildisease/detect" >體驗</Nav.Link>
           </Nav>
         </Navbar.Collapse>
