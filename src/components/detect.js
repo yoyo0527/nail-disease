@@ -406,7 +406,7 @@ export default function Detect(props) {
                             <Col sm={6}>
                                 <div className='holder'>
                                     <Card>
-                                        <div style={{transform: 'scaleX(-1)', height: cropperSize.height}}>
+                                        <div style={{height: cropperSize.height}}>
                                             <Cropper
                                                 image={capturedPhoto}
                                                 crop={crop}
