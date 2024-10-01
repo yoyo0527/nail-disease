@@ -185,7 +185,7 @@ export default function Detect(props) {
         setShowCropper(true); 
         setCropperSize({ width: canvas.width, height: canvas.height });
     };
-
+    console.log(cropperSize);
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels);
     }, []);
@@ -383,7 +383,7 @@ export default function Detect(props) {
                                 <div className='holder'>
                                     <Card>
                                         <video ref={cameraRef} style={{ transform: 'scaleX(-1)' }}></video>
-                                        <Button onClick={handleOpenCamera}>開啟相機</Button>
+                                        <Button onClick={handleOpenCamera} style={{marginTop: '5%'}}>開啟相機</Button>
                                     </Card>
                                 </div>
                             </Col>
@@ -393,7 +393,7 @@ export default function Detect(props) {
                                 <div className='holder'>
                                     <Card>
                                         <canvas ref={photoRef} style={{ transform: 'scaleX(-1)' }}></canvas>
-                                        <Button onClick={handleTakePhoto}>拍照</Button>
+                                        <Button onClick={handleTakePhoto} style={{marginTop: '5%'}}>拍照</Button>
                                         {/* <Button onClick={handleSavePhoto}>儲存照片</Button> */}
                                     </Card>
                                 </div>
@@ -406,7 +406,7 @@ export default function Detect(props) {
                             <Col sm={6}>
                                 <div className='holder'>
                                     <Card>
-                                        <div style={{ width: cropperSize.width, height: cropperSize.height}}>
+                                        <div style={{transform: 'scaleX(-1)', height: cropperSize.height}}>
                                             <Cropper
                                                 image={capturedPhoto}
                                                 crop={crop}
