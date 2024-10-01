@@ -137,7 +137,7 @@ export default function Detect(props) {
 
                 }else if(data.prediction === 'onycholysis') {
                     uploadtogpt('甲剝離症）');
-                    setDetectresult('甲剝離症）');
+                    setDetectresult('甲剝離症');
 
                 }else if(data.prediction === 'white spot') {
                     uploadtogpt('白甲');
