@@ -203,7 +203,7 @@ export default function Detect(props) {
             byteNumbers[i] = byteCharacters.charCodeAt(i);
         }
         const byteArray = new Uint8Array(byteNumbers);
-        const blob = new Blob([byteArray], { type: 'image/png' });
+        const blob = new Blob([byteArray], { type: 'image/jpg' });
 
         // 創建下載連結
         const downloadLink = document.createElement('a');
