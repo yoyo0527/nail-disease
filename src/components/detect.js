@@ -208,7 +208,7 @@ export default function Detect(props) {
         // 創建下載連結
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = 'nail.png';
+        downloadLink.download = 'nail.jpg';
 
         // 模擬下載連結
         document.body.appendChild(downloadLink);
