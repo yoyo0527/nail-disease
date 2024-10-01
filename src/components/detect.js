@@ -8,7 +8,7 @@ import { FileUploader } from 'baseui/file-uploader';
 import Swal from 'sweetalert2';
 import loading from '../assets/images/loading.gif';
 import withReactContent from 'sweetalert2-react-content';
-import { useNavigate } from 'react-router-dom';
+import { GoogleMap, LoadScript, Marker , InfoWindow } from '@react-google-maps/api';
 
 function useInterval(callback, delay) {
     const savedCallback = React.useRef(() => {});
@@ -55,15 +55,19 @@ function useFakeProgress() {
     return [fakeProgress, startFakeProgress, stopFakeProgress];
 }
 
-export default function Detect() {
+export default function Detect(props) {
     const [file, setFile] = useState(null);
     const [progressAmount, startFakeProgress, stopFakeProgress] = useFakeProgress();
     const MySwal = withReactContent(Swal);
-    const navigate = useNavigate();
     const [result, setResult] = useState(null);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [advice, setAdvice] = useState(null);
     const [detectresult, setDetectresult] = useState(null);
+    const [clinics, setClinics] = useState([]);
+    const [latitude, setLatitude] = useState(null);
+    const [longitude, setLongitude] = useState(null);
+    const [clinicButton, setClinicButton] = useState(false);
+    const [activeMarker, setActiveMarker] = useState(null);
 
     const handleDrop = (acceptedFiles) => {
         if (acceptedFiles && acceptedFiles.length > 0) {
@@ -90,7 +94,7 @@ export default function Detect() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('http://localhost:5000/upload', {
+            const response = await fetch('https://6cf0a65c.r28.cpolar.top/upload', {
             // const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
@@ -101,7 +105,7 @@ export default function Detect() {
             if (data){
                 Swal.fire('Correct', '辨識完畢!', 'success');
                 const uploadtogpt = async (question) => {
-                    const response = await fetch('http://127.0.0.1:5000/ask', {
+                    const response = await fetch('https://7a326068.r28.cpolar.top/ask', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -110,7 +114,7 @@ export default function Detect() {
                     });
                     const data = await response.json();
                     setAdvice(data.response);
-                    console.log(advice);
+                    setClinicButton(true);
                 };
                 if (data.prediction === 'Onychomycosis') {
                     uploadtogpt('甲癬');
@@ -192,8 +196,8 @@ export default function Detect() {
     };
 
     const handleSavePhoto = () => {
-        // 將 capturedPhoto 轉換為 Blob 對象
-        const byteCharacters = atob(capturedPhoto.split(',')[1]);
+        
+        const byteCharacters = capturedPhoto.split(',')[1];
         const byteNumbers = new Array(byteCharacters.length);
         for (let i = 0; i < byteCharacters.length; i++) {
             byteNumbers[i] = byteCharacters.charCodeAt(i);
@@ -201,7 +205,7 @@ export default function Detect() {
         const byteArray = new Uint8Array(byteNumbers);
         const blob = new Blob([byteArray], { type: 'image/png' });
 
-        // 創建下载連結
+        // 創建下載連結
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(blob);
         downloadLink.download = 'nail.png';
@@ -213,83 +217,242 @@ export default function Detect() {
     };
 
     useEffect(() => {
+        const getLocation = () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        setLatitude(lat);
+                        setLongitude(lng);
+                        console.log(`獲取位置成功: 緯度 ${lat}, 經度 ${lng}`);
+                    },
+                    (error) => {
+                        console.error('無法獲取位置:', error.message);
+                        // 在此可以根據錯誤類型顯示不同的提示
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                alert("使用者拒絕了地理位置請求。");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                alert("地理位置不可用。");
+                                break;
+                            case error.TIMEOUT:
+                                alert("請求地理位置超時。");
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                alert("發生未知錯誤。");
+                                break;
+                        }
+                    }
+                );
+            } else {
+                alert('this browser no allowed for gps');
+            }
+        };
+        getLocation();
+    }, []);
+
+    useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
-
+        
         window.addEventListener('resize', handleResize);
-
+    
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
-  return (
-    <div>
-      {/* 指甲辨識 */}
-      <section id="graynail" className="block blog-block">
-        <Container fluid>
-          <div className="title-holder">
-            <h2>辨識體驗</h2>
-          </div>
-          <Row>
-            {windowWidth > 768 && (
-                <Col sm={6}>
-                <div className='holder'>
-                    <Card>
-                        <video ref={cameraRef} style={{ transform: "scaleX(-1)" }}></video>
-                        <Button onClick={handleOpenCamera}>開啟相機</Button>
-                    </Card>
-                </div>
-                </Col>
-            )} 
-            {windowWidth > 768 && (           
-                <Col sm={6}>
-                <div className='holder'>
-                    <Card>
-                        <canvas ref={photoRef}></canvas>
-                        <Button onClick={handleTakePhoto} style={{ marginBottom: '3%' }}>拍照</Button>
-                        <Button onClick={handleSavePhoto}>儲存照片</Button>
+    }, []); 
 
-                    </Card>
-                </div>
-                </Col>
-            )}
-            {windowWidth > 768 && (           
-                <hr className='hr-design'/>
-            )}
-            <Col sm={6}>
-              <div className='holder'>
-                <Card>
-                    <FileUploader
-                        onDrop={handleDrop} 
-                        onCancel={stopFakeProgress} 
-                        progressAmount={progressAmount} 
-                        progressMessage={
-                            progressAmount
-                            ? `Uploading... ${progressAmount}% of 100%`
-                            : ''
-                            
-                        }
-                        className='FileUploader'
-                    />
-                    <h3><center>{result}</center></h3>
-                    <Button onClick={handleUpload}>上傳辨識</Button>
-                    <h3 style={{textAlign:'center'}}>辨識結果:{detectresult}</h3>
-                </Card>
-              </div>
-            </Col>
-            <Col sm={6}>
-              <div className='holder'>
-                <Card>
-                    <h3>建議:</h3>
-                    <div dangerouslySetInnerHTML={{ __html: advice }} />
-                </Card>
-              </div>
-            </Col>
+    const getNearbyClinics = async () => {
+        if (!latitude || !longitude) {
+            alert('尚未取得用戶位置請重試');
+            return;
+        }
+        try {
+            const response = await fetch('https://541cffd9.r28.cpolar.top/get_nearby_clinics', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ latitude, longitude }),
+            });
+            const data = await response.json();
+            if (data.status === 'success') {
+                setClinics(data.clinics);
+                console.log('nearby clinics:',data.clinics);
+            } else {
+                alert('無法取得附近診所資訊');
+            }
+        } catch (error) {
+            console.error('Error fetching nearby clinics:', error);
+        }
+    };
 
-          </Row>
-        </Container>
-      </section>
-    </div>
-  )
+    const mapContainerStyle = {
+        height: '700px',
+        width: '100%',
+    };
+
+    const [mapCenter, setMapCenter] = useState(null);
+    useEffect(() => {
+        if (latitude && longitude) {
+            setMapCenter({ lat: latitude, lng: longitude });
+        }
+    }, [latitude, longitude]);
+
+    // 處理 Marker 點擊事件
+    const handleMarkerClick = (clinic) => {
+        setActiveMarker(clinic);
+        setMapCenter({
+            lat: clinic.geometry.location.lat,
+            lng: clinic.geometry.location.lng,
+        });
+    }    
+
+    // 關閉 InfoWindow 的處理
+    const handleInfoWindowClose = () => {
+        setActiveMarker(null);
+    };
+
+    return (
+        <div>
+        {/* 指甲辨識 */}
+            <section id="graynail" className="block blog-block">
+                <Container fluid>
+                    <div className="title-holder">
+                        <h2>辨識體驗</h2>
+                    </div>
+                    <Row>
+                        {windowWidth > 768 && (
+                            <Col sm={6}>
+                                <div className='holder'>
+                                    <Card>
+                                        <video ref={cameraRef} style={{ transform: "scaleX(-1)" }}></video>
+                                        <Button onClick={handleOpenCamera}>開啟相機</Button>
+                                    </Card>
+                                </div>
+                            </Col>
+                        )} 
+                        {windowWidth > 768 && (           
+                            <Col sm={6}>
+                                <div className='holder'>
+                                    <Card>
+                                        <canvas ref={photoRef}></canvas>
+                                        <Button onClick={handleTakePhoto} style={{ marginBottom: '3%' }}>拍照</Button>
+                                        <Button onClick={handleSavePhoto}>儲存照片</Button>
+
+                                    </Card>
+                                </div>
+                            </Col>
+                        )}
+                        {windowWidth > 768 && (           
+                            <hr className='hr-design'/>
+                        )}
+                        <Col sm={6}>
+                            <div className='holder'>
+                                <Card>
+                                    <FileUploader
+                                        onDrop={handleDrop} 
+                                        onCancel={stopFakeProgress} 
+                                        progressAmount={progressAmount} 
+                                        progressMessage={
+                                            progressAmount
+                                            ? `Uploading... ${progressAmount}% of 100%`
+                                            : ''
+                                            
+                                        }
+                                        className='FileUploader'
+                                    />
+                                    <h3><center>{result}</center></h3>
+                                    <Button onClick={handleUpload}>上傳辨識</Button>
+                                    <h3 style={{textAlign:'center'}}>辨識結果:{detectresult}</h3>
+                                </Card>
+                            </div>
+                        </Col>
+                        <Col sm={6}>
+                            <div className='holder'>
+                                <Card>
+                                    <h3>建議:</h3>
+                                    <div dangerouslySetInnerHTML={{ __html: advice }} />
+                                    {clinicButton && (
+                                        <Button onClick={getNearbyClinics}>查看附近診所</Button>
+                                    )}
+                                </Card>
+                            </div>
+                        </Col>
+                        {windowWidth > 768 && (           
+                            <hr className='hr-design'/>
+                        )}
+                        {/*{clinicButton &&(
+                            <Col sm={12}>
+                                <LoadScript googleMapsApiKey="AIzaSyCDZPfFIb6gmKj3XBFzFL3F35AYHY35E0M">
+                                    <GoogleMap
+                                        mapContainerStyle={mapContainerStyle}
+                                        center={center}
+                                        zoom={15}
+                                    >
+                                        {clinics.map((clinic, index) => (
+                                            <Marker
+                                                key={index}
+                                                position={{
+                                                    lat: clinic.geometry.location.lat,
+                                                    lng: clinic.geometry.location.lng,
+                                                }}
+                                                title={clinic.name} 
+                                            />
+                                        ))}
+                                    </GoogleMap>
+                                </LoadScript> 
+                            </Col>
+                        )}*/}
+                        {clinicButton && (
+                            <Col sm={12}>
+                                <LoadScript googleMapsApiKey="AIzaSyCDZPfFIb6gmKj3XBFzFL3F35AYHY35E0M">
+                                    <GoogleMap
+                                        mapContainerStyle={mapContainerStyle}
+                                        center={mapCenter}
+                                        zoom={15}
+                                    >
+                                        {clinics.map((clinic, index) => (
+                                            <Marker
+                                                key={index}
+                                                position={{
+                                                    lat: clinic.geometry.location.lat,
+                                                    lng: clinic.geometry.location.lng,
+                                                }}
+                                                onClick={() => handleMarkerClick(clinic)} // 點擊事件
+                                                title={clinic.name}
+                                            />
+                                        ))}
+
+                                        {/* 顯示 InfoWindow */}
+                                        {activeMarker && (
+                                            <InfoWindow
+                                                position={{
+                                                    lat: activeMarker.geometry.location.lat,
+                                                    lng: activeMarker.geometry.location.lng,
+                                                }}
+                                                options={{
+                                                    pixelOffset: new window.google.maps.Size(0, -30)
+                                                }}
+                                                onCloseClick={handleInfoWindowClose} // 點擊關閉 InfoWindow
+                                            >
+                                                <div>
+                                                    <h4>{activeMarker.name}</h4>
+                                                    <p>{activeMarker.vicinity}</p> 
+                                                    <p>評分: {activeMarker.rating}</p> 
+                                                </div>
+                                            </InfoWindow>
+                                        )}
+                                    </GoogleMap>
+                                </LoadScript>
+                            </Col>
+                        )}
+                    </Row>
+                </Container>
+            </section>
+        </div>
+    )
 }

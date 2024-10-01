@@ -1,6 +1,5 @@
 // 管理各個頁面用的components
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
 import AppHeader from './header';
 import AppHero from './hero';
 import AppAbout from './about';

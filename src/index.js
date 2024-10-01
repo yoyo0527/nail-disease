@@ -6,18 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import { Client as Styletron } from 'styletron-engine-monolithic';
 import { Provider as StyletronProvider } from 'styletron-react';
 import { LightTheme, BaseProvider } from 'baseui';
+import './design.css'
+import './App.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const engine = new Styletron();
 
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <StyletronProvider value={engine}>
       <BaseProvider theme={LightTheme}>
         <App />
       </BaseProvider>
     </StyletronProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
