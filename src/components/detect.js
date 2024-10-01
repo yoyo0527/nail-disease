@@ -3,12 +3,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { FileUploader } from 'baseui/file-uploader';
 import Swal from 'sweetalert2';
 import loading from '../assets/images/loading.gif';
 import withReactContent from 'sweetalert2-react-content';
 import { GoogleMap, LoadScript, Marker , InfoWindow } from '@react-google-maps/api';
+import getCroppedImg from './cropImage'; 
+import Cropper from 'react-easy-crop';
 
 function useInterval(callback, delay) {
     const savedCallback = React.useRef(() => {});
@@ -90,6 +92,7 @@ export default function Detect(props) {
                         imageUrl: loading,
                         showConfirmButton: false,
                     })
+        setDetectresult('等待中...');
         const formData = new FormData();
         formData.append('file', file);
 
@@ -155,66 +158,116 @@ export default function Detect(props) {
 
     const cameraRef = useRef(null);
     const handleOpenCamera = () => {
-        const videoWidth = cameraRef.current.offsetWidth;
-        const videoHeight = 400;
-
-        navigator.mediaDevices
-        .getUserMedia({
-            video: {
-                width: videoWidth,
-                height: videoHeight,
-                audio: false,
-                deviceId: "default",
-                facingMode: "user",
-            },
-        })
-        .then((stream) => {
+        navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
             let video = cameraRef.current;
             video.srcObject = stream;
             video.play();
-        })
-        .catch((err) => {
-            console.error("error:", err);
         });
     };
 
     const photoRef = useRef(null);
+    const [croppedAreaPixels, setCroppedAreaPixels] = useState(null); 
     const [capturedPhoto, setCapturedPhoto] = useState(null);
+    const [croppedImage, setCroppedImage] = useState(null);
+    const [showCropper, setShowCropper] = useState(false);
+    const [crop, setCrop] = useState({ x: 0, y: 0 });
+    const [zoom, setZoom] = useState(1);
+    const [cropperSize, setCropperSize] = useState({ width: 0, height: 0 });
+
     const handleTakePhoto = () => {
-        const target = photoRef.current;
-        const ctx = target.getContext("2d");
-        const photoWidth = cameraRef.current.offsetWidth;
-        const photoHeight = 400;
-        target.width = photoWidth ;
-        target.height = photoHeight;
-        ctx.translate(photoWidth, 0);
-        ctx.scale(-1, 1);
-        ctx.drawImage(cameraRef.current, 0, 0, photoWidth, photoHeight);
-        // 獲取 Canvas 上的圖像數據
-        const imageDataURL = target.toDataURL();
-        setCapturedPhoto(imageDataURL);
+        const video = cameraRef.current;
+        const canvas = photoRef.current;
+        const ctx = canvas.getContext('2d');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        setCapturedPhoto(canvas.toDataURL('image/png'));
+        setShowCropper(true); 
+        setCropperSize({ width: canvas.width, height: canvas.height });
     };
 
-    const handleSavePhoto = () => {
-        
-        const byteCharacters = capturedPhoto.split(',')[1];
-        const byteNumbers = new Array(byteCharacters.length);
-        for (let i = 0; i < byteCharacters.length; i++) {
-            byteNumbers[i] = byteCharacters.charCodeAt(i);
+    const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
+        setCroppedAreaPixels(croppedAreaPixels);
+    }, []);
+
+    const handleCropSave = useCallback(async () => {
+        try {
+            const croppedImg = await getCroppedImg(capturedPhoto, croppedAreaPixels);
+
+            // 將 Base64 字符串轉換為 Blob
+            const response = await fetch(croppedImg);
+            const blob = await response.blob(); // 直接獲取 Blob
+    
+            const formData = new FormData();
+            formData.append('file', blob, 'cropped.png'); 
+    
+            console.log(croppedImg);
+    
+            MySwal.fire({
+                text: '辨識中...(辨識完畢將會自動關閉',
+                imageUrl: loading,
+                showConfirmButton: false,
+            });
+
+            const uploadResponse  = await fetch('https://6cf0a65c.r28.cpolar.top/upload', {
+            // const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
+                method: 'POST',
+                body: formData,
+            });
+
+            setDetectresult('等待中...');
+            const data = await uploadResponse .json();
+            console.log(data);
+            setAdvice('等待中....');
+            if (data){
+                Swal.fire('Correct', '辨識完畢!', 'success');
+                const uploadtogpt = async (question) => {
+                    const response = await fetch('https://7a326068.r28.cpolar.top/ask', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ question: question })
+                    });
+                    const data = await response.json();
+                    setAdvice(data.response);
+                    setClinicButton(true);
+                };
+                if (data.prediction === 'Onychomycosis') {
+                    uploadtogpt('甲癬');
+                    setDetectresult('甲癬');
+                }else if(data.prediction === 'beau_s') {
+                    uploadtogpt('博氏線');
+                    setDetectresult('博氏線');
+
+                }else if(data.prediction === 'black_line') {
+                    uploadtogpt('縱向黑線');
+                    setDetectresult('縱向黑線');
+
+                }
+                // else if(data.prediction === 'clubbing') {
+                //     uploadtogpt('杵狀指');
+                // }
+                else if(data.prediction === 'healthy nail') {
+                    uploadtogpt('健康手指');
+                    setDetectresult('健康手指');
+
+                }else if(data.prediction === 'onycholysis') {
+                    uploadtogpt('甲剝離症）');
+                    setDetectresult('甲剝離症');
+
+                }else if(data.prediction === 'white spot') {
+                    uploadtogpt('白甲');
+                    setDetectresult('白甲');
+                }else{
+                    Swal.fire('Mistake', '上傳辨識失敗!', 'error');
+                }
+            }
+        } catch (e) {
+            console.error(e);
         }
-        const byteArray = new Uint8Array(byteNumbers);
-        const blob = new Blob([byteArray], { type: 'image/jpg' });
+    }, [croppedAreaPixels, capturedPhoto]);
 
-        // 創建下載連結
-        const downloadLink = document.createElement('a');
-        downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = 'nail.jpg';
-
-        // 模擬下載連結
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-    };
 
     useEffect(() => {
         const getLocation = () => {
@@ -329,7 +382,7 @@ export default function Detect(props) {
                             <Col sm={6}>
                                 <div className='holder'>
                                     <Card>
-                                        <video ref={cameraRef} style={{ transform: "scaleX(-1)" }}></video>
+                                        <video ref={cameraRef} style={{ transform: 'scaleX(-1)' }}></video>
                                         <Button onClick={handleOpenCamera}>開啟相機</Button>
                                     </Card>
                                 </div>
@@ -339,16 +392,37 @@ export default function Detect(props) {
                             <Col sm={6}>
                                 <div className='holder'>
                                     <Card>
-                                        <canvas ref={photoRef}></canvas>
-                                        <Button onClick={handleTakePhoto} style={{ marginBottom: '3%' }}>拍照</Button>
-                                        <Button onClick={handleSavePhoto}>儲存照片</Button>
-
+                                        <canvas ref={photoRef} style={{ transform: 'scaleX(-1)' }}></canvas>
+                                        <Button onClick={handleTakePhoto}>拍照</Button>
+                                        {/* <Button onClick={handleSavePhoto}>儲存照片</Button> */}
                                     </Card>
                                 </div>
                             </Col>
                         )}
                         {windowWidth > 768 && (           
                             <hr className='hr-design'/>
+                        )}
+                        {windowWidth > 768 && (           
+                            <Col sm={6}>
+                                <div className='holder'>
+                                    <Card>
+                                        <div style={{ width: cropperSize.width, height: cropperSize.height}}>
+                                            <Cropper
+                                                image={capturedPhoto}
+                                                crop={crop}
+                                                zoom={zoom}
+                                                aspect={1}
+                                                onCropChange={setCrop}
+                                                onZoomChange={setZoom}
+                                                onCropComplete={onCropComplete}
+                                            />
+                                        </div>
+                                        {showCropper && (
+                                            <Button onClick={handleCropSave} style={{ zIndex: 1000}}>上傳辨識</Button>
+                                        )}
+                                    </Card>
+                                </div>
+                            </Col>                        
                         )}
                         <Col sm={6}>
                             <div className='holder'>
@@ -367,13 +441,16 @@ export default function Detect(props) {
                                     />
                                     <h3><center>{result}</center></h3>
                                     <Button onClick={handleUpload}>上傳辨識</Button>
-                                    <h3 style={{textAlign:'center'}}>辨識結果:{detectresult}</h3>
                                 </Card>
                             </div>
                         </Col>
+                        {windowWidth > 768 && (           
+                            <hr className='hr-design'/>
+                        )}
                         <Col sm={6}>
                             <div className='holder'>
                                 <Card>
+                                    <h3 style={{textAlign:'center'}}>辨識結果:{detectresult}</h3>
                                     <h3>建議:</h3>
                                     <div dangerouslySetInnerHTML={{ __html: advice }} />
                                     {clinicButton && (
@@ -382,9 +459,6 @@ export default function Detect(props) {
                                 </Card>
                             </div>
                         </Col>
-                        {windowWidth > 768 && (           
-                            <hr className='hr-design'/>
-                        )}
                         {/*{clinicButton &&(
                             <Col sm={12}>
                                 <LoadScript googleMapsApiKey="AIzaSyCDZPfFIb6gmKj3XBFzFL3F35AYHY35E0M">
@@ -408,7 +482,7 @@ export default function Detect(props) {
                             </Col>
                         )}*/}
                         {clinicButton && (
-                            <Col sm={12}>
+                            <Col sm={6}>
                                 <LoadScript googleMapsApiKey="AIzaSyCDZPfFIb6gmKj3XBFzFL3F35AYHY35E0M">
                                     <GoogleMap
                                         mapContainerStyle={mapContainerStyle}
