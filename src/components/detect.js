@@ -168,7 +168,6 @@ export default function Detect(props) {
     const photoRef = useRef(null);
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null); 
     const [capturedPhoto, setCapturedPhoto] = useState(null);
-    const [croppedImage, setCroppedImage] = useState(null);
     const [showCropper, setShowCropper] = useState(false);
     const [crop, setCrop] = useState({ x: 0, y: 0 });
     const [zoom, setZoom] = useState(1);
@@ -185,7 +184,7 @@ export default function Detect(props) {
         setShowCropper(true); 
         setCropperSize({ width: canvas.width, height: canvas.height });
     };
-    console.log(cropperSize);
+
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels);
     }, []);
@@ -200,9 +199,7 @@ export default function Detect(props) {
     
             const formData = new FormData();
             formData.append('file', blob, 'cropped.png'); 
-    
-            console.log(croppedImg);
-    
+        
             MySwal.fire({
                 text: '辨識中...(辨識完畢將會自動關閉',
                 imageUrl: loading,
@@ -216,7 +213,7 @@ export default function Detect(props) {
             });
 
             setDetectresult('等待中...');
-            const data = await uploadResponse .json();
+            const data = await uploadResponse.json();
             console.log(data);
             setAdvice('等待中....');
             if (data){
@@ -394,7 +391,6 @@ export default function Detect(props) {
                                     <Card>
                                         <canvas ref={photoRef} style={{ transform: 'scaleX(-1)' }}></canvas>
                                         <Button onClick={handleTakePhoto} style={{marginTop: '5%'}}>拍照</Button>
-                                        {/* <Button onClick={handleSavePhoto}>儲存照片</Button> */}
                                     </Card>
                                 </div>
                             </Col>
