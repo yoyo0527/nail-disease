@@ -97,7 +97,7 @@ export default function Detect(props) {
         formData.append('file', file);
 
         try {
-            const response = await fetch('https://14a58ab3.r28.cpolar.top/upload', {
+            const response = await fetch('https://7564409.r28.cpolar.top/upload', {
             // const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
@@ -108,7 +108,7 @@ export default function Detect(props) {
             if (data){
                 Swal.fire('Correct', '辨識完畢!', 'success');
                 const uploadtogpt = async (question) => {
-                    const response = await fetch('https://abf03a2.r28.cpolar.top/ask', {
+                    const response = await fetch('https://ea21d30.r28.cpolar.top/ask', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -206,7 +206,7 @@ export default function Detect(props) {
                 showConfirmButton: false,
             });
 
-            const uploadResponse  = await fetch('https://14a58ab3.r28.cpolar.top/upload', {
+            const uploadResponse  = await fetch('https://7564409.r28.cpolar.top/upload', {
             // const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
@@ -219,7 +219,7 @@ export default function Detect(props) {
             if (data){
                 Swal.fire('Correct', '辨識完畢!', 'success');
                 const uploadtogpt = async (question) => {
-                    const response = await fetch('https://abf03a2.r28.cpolar.top/ask', {
+                    const response = await fetch('https://ea21d30.r28.cpolar.top/ask', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -321,7 +321,7 @@ export default function Detect(props) {
             return;
         }
         try {
-            const response = await fetch('https://7c89bd64.r28.cpolar.top/get_nearby_clinics', {
+            const response = await fetch('https://15bdd384.r28.cpolar.top/get_nearby_clinics', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
