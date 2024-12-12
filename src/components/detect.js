@@ -97,8 +97,7 @@ export default function Detect(props) {
         formData.append('file', file);
 
         try {
-            const response = await fetch('https://7564409.r28.cpolar.top/upload', {
-            // const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
+            const response = await fetch('https://a9a02fe.r28.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
             });
@@ -108,7 +107,7 @@ export default function Detect(props) {
             if (data){
                 Swal.fire('Correct', '辨識完畢!', 'success');
                 const uploadtogpt = async (question) => {
-                    const response = await fetch('https://ea21d30.r28.cpolar.top/ask', {
+                    const response = await fetch('https://439c112f.r28.cpolar.top/ask', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -195,7 +194,7 @@ export default function Detect(props) {
 
             // 將 Base64 字符串轉換為 Blob
             const response = await fetch(croppedImg);
-            const blob = await response.blob(); // 直接獲取 Blob
+            const blob = await response.blob(); 
     
             const formData = new FormData();
             formData.append('file', blob, 'cropped.png'); 
@@ -206,8 +205,7 @@ export default function Detect(props) {
                 showConfirmButton: false,
             });
 
-            const uploadResponse  = await fetch('https://7564409.r28.cpolar.top/upload', {
-            // const response = await fetch('https://e7f6460.r26.cpolar.top/upload', {
+            const uploadResponse  = await fetch('https://a9a02fe.r28.cpolar.top/upload', {
                 method: 'POST',
                 body: formData,
             });
@@ -219,7 +217,7 @@ export default function Detect(props) {
             if (data){
                 Swal.fire('Correct', '辨識完畢!', 'success');
                 const uploadtogpt = async (question) => {
-                    const response = await fetch('https://ea21d30.r28.cpolar.top/ask', {
+                    const response = await fetch('https://439c112f.r28.cpolar.top/ask', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -242,9 +240,6 @@ export default function Detect(props) {
                     setDetectresult('縱向黑線');
 
                 }
-                // else if(data.prediction === 'clubbing') {
-                //     uploadtogpt('杵狀指');
-                // }
                 else if(data.prediction === 'healthy nail') {
                     uploadtogpt('健康手指');
                     setDetectresult('健康手指');
@@ -321,7 +316,7 @@ export default function Detect(props) {
             return;
         }
         try {
-            const response = await fetch('https://15bdd384.r28.cpolar.top/get_nearby_clinics', {
+            const response = await fetch('https://63733f3c.r28.cpolar.top/get_nearby_clinics', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -455,28 +450,6 @@ export default function Detect(props) {
                                 </Card>
                             </div>
                         </Col>
-                        {/*{clinicButton &&(
-                            <Col sm={12}>
-                                <LoadScript googleMapsApiKey="AIzaSyCDZPfFIb6gmKj3XBFzFL3F35AYHY35E0M">
-                                    <GoogleMap
-                                        mapContainerStyle={mapContainerStyle}
-                                        center={center}
-                                        zoom={15}
-                                    >
-                                        {clinics.map((clinic, index) => (
-                                            <Marker
-                                                key={index}
-                                                position={{
-                                                    lat: clinic.geometry.location.lat,
-                                                    lng: clinic.geometry.location.lng,
-                                                }}
-                                                title={clinic.name} 
-                                            />
-                                        ))}
-                                    </GoogleMap>
-                                </LoadScript> 
-                            </Col>
-                        )}*/}
                         {clinicButton && (
                             <Col sm={6}>
                                 <LoadScript googleMapsApiKey="AIzaSyCDZPfFIb6gmKj3XBFzFL3F35AYHY35E0M">
